@@ -1,0 +1,56 @@
+name: web-audit
+
+on:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      config:
+        description: Path to the audit config
+        default: config/examples/full.config.yaml
+
+permissions:
+  contents: read
+  checks: write
+  pull-requests: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - run: npx playwright install --with-deps chromium
+
+      - name: Run audit
+        run: >
+          npm run --silent audit -- run
+          --config ${{ github.event.inputs.config || 'config/examples/full.config.yaml' }}
+          --out-dir reports
+          --reporters json,html,junit,github
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-reports
+          path: reports/
+
+      - name: Publish JUnit results
+        if: always()
+        uses: mikepenz/action-junit-report@v5
+        with:
+          report_paths: reports/junit.xml
+          fail_on_failure: false

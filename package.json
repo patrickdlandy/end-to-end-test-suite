@@ -13,7 +13,8 @@
     "node": ">=22"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && node scripts/copy-assets.mjs",
+    "refresh-data": "node scripts/refresh-data.mjs",
     "audit": "tsx bin/audit.ts",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -37,6 +38,7 @@
     "cheerio": "^1.2.0",
     "cli-table3": "^0.6.5",
     "commander": "^12.1.0",
+    "junit-report-builder": "^5.1.2",
     "lighthouse": "^12.8.2",
     "p-limit": "^6.1.0",
     "picocolors": "^1.1.1",

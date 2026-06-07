@@ -18,4 +18,4 @@ targets:
   - url: https://github.com/
 ci:
   failOn: [error]
-  reporters: [json, terminal]
+  reporters: [json, html, junit, terminal]

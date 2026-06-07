@@ -31,10 +31,21 @@ trend tracking, plus a terminal summary).
     (canvas/WebGL/audio/font API instrumentation injected before load), `consent`
     (CMP-global + banner detection: IAB TCF, OneTrust, Cookiebot, …).
 
-All six categories are implemented. Later phases cover reporting polish (HTML,
-JUnit, GitHub annotations), CI wiring, blocklist/DB refresh tooling, and
-auth/crawl activation. See
+- **Phase 4 (reporting + CI)** — reporters beyond JSON/terminal: a self-contained
+  **HTML** report, **JUnit XML** (for CI test-reporters), and **GitHub
+  annotations** (`::error`/`::warning` + job-summary markdown). Plus a GitHub
+  Actions workflow (`.github/workflows/audit.yml`), a scheduled dataset-refresh
+  workflow, a `dist` asset-copy step so the compiled bin finds vendored data, and
+  an `npm run refresh-data` script.
+
+Remaining: Phase 5 activates the `auth`/`crawl` config placeholders. See
 `/home/patrick/.claude/plans/help-me-make-a-smooth-curry.md` for the roadmap.
+
+### Reporters
+
+Select with `ci.reporters` in config or `--reporters`. Files are written under
+`--out-dir` (default `reports/`): `json`→`audit.json`, `html`→`audit.html`,
+`junit`→`junit.xml`; `terminal` and `github` write to stdout.
 
 > Note: tracker/fingerprint signals depend on third-party scripts actually
 > executing. Some sites serve stripped pages to headless browsers or lazy-load
@@ -67,7 +78,7 @@ and are deep-merged with per-target overrides. See
 full shape, including the `auth`/`crawl` extensibility placeholders.
 
 ```bash
-audit run --config <path> [--out reports/audit.json] [--concurrency 4] [--reporters json,terminal]
+audit run --config <path> [--out-dir reports] [--concurrency 4] [--reporters json,html,junit,github,terminal]
 ```
 
 ## Architecture
