@@ -79,6 +79,8 @@ export interface PageArtifacts {
   console: ConsoleMessage[];
   /** Wall-clock time the navigation + capture took, in ms. */
   captureDurationMs: number;
+  /** Absolute, deduped http(s) anchor hrefs found on the page (used by crawl). */
+  links: string[];
   /** Median-aggregated Lighthouse result; present only when a check needs it. */
   lighthouse?: LighthouseResult;
   /** TLS handshake facts; present only when a check needs it. */

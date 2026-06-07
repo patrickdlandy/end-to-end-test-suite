@@ -60,6 +60,65 @@ export const budgetsSchema = z
 
 export type Budgets = z.infer<typeof budgetsSchema>;
 
+/**
+ * Authentication for protected targets. Secrets should be written as
+ * `${ENV:VAR_NAME}` in config and are resolved from the environment at load time
+ * (never commit real credentials). Auth is applied to the browser context before
+ * navigation and never serialized into reports.
+ */
+export const authSchema = z.discriminatedUnion("type", [
+  z.object({ type: z.literal("basic"), username: z.string(), password: z.string() }).strict(),
+  z.object({ type: z.literal("bearer"), token: z.string() }).strict(),
+  z.object({ type: z.literal("header"), headers: z.record(z.string()) }).strict(),
+  z
+    .object({
+      type: z.literal("cookie"),
+      cookies: z
+        .array(
+          z
+            .object({
+              name: z.string(),
+              value: z.string(),
+              domain: z.string().optional(),
+              path: z.string().optional(),
+            })
+            .strict(),
+        )
+        .min(1),
+    })
+    .strict(),
+  z
+    .object({
+      type: z.literal("form"),
+      loginUrl: z.string().url(),
+      /** Map of CSS selector → value to fill (use ${ENV:...} for secrets). */
+      fields: z.record(z.string()),
+      /** Selector to click to submit the form. */
+      submitSelector: z.string(),
+      /** Optional selector to wait for as a success signal after submit. */
+      waitForSelector: z.string().optional(),
+    })
+    .strict(),
+]);
+
+export type AuthConfig = z.infer<typeof authSchema>;
+
+/** Crawl configuration: expand each target into linked pages. */
+export const crawlSchema = z
+  .object({
+    maxDepth: z.number().int().nonnegative().default(0),
+    maxPages: z.number().int().positive().default(20),
+    sameOrigin: z.boolean().default(true),
+    /** Regex strings; if non-empty a URL must match at least one to be crawled. */
+    include: z.array(z.string()).default([]),
+    /** Regex strings; a URL matching any is skipped. */
+    exclude: z.array(z.string()).default([]),
+    respectRobots: z.boolean().default(true),
+  })
+  .strict();
+
+export type CrawlConfig = z.infer<typeof crawlSchema>;
+
 /** Settings shared between `defaults` and per-target overrides. */
 export const baseSettingsSchema = z
   .object({
@@ -70,9 +129,8 @@ export const baseSettingsSchema = z
     waitUntil: z.enum(["load", "domcontentloaded", "networkidle", "commit"]).optional(),
     userAgent: z.string().optional(),
     budgets: budgetsSchema.optional(),
-    // --- extensibility placeholders (parsed, not yet implemented) ---
-    auth: z.null().optional(),
-    crawl: z.null().optional(),
+    auth: authSchema.optional(),
+    crawl: crawlSchema.optional(),
   })
   .strict();
 
@@ -112,4 +170,6 @@ export interface ResolvedTarget {
   waitUntil: "load" | "domcontentloaded" | "networkidle" | "commit";
   userAgent?: string;
   budgets: Budgets;
+  auth?: AuthConfig;
+  crawl?: CrawlConfig;
 }

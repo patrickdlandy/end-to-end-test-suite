@@ -16,6 +16,7 @@ export function makeArtifacts(overrides: Partial<PageArtifacts> = {}): PageArtif
     responses: [],
     console: [],
     captureDurationMs: 1,
+    links: [],
     ...overrides,
   };
 }

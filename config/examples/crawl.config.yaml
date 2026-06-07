@@ -1,0 +1,19 @@
+version: 1
+defaults:
+  categories: [security, seo, best-practices]
+  waitUntil: load
+  crawl:
+    maxDepth: 1 # 0 = just the seed; 1 = seed + its links; etc.
+    maxPages: 5 # cap pages crawled per seed
+    sameOrigin: true # only follow links on the seed's origin
+    include: [] # regex allowlist (empty = allow all)
+    exclude: ['\.(pdf|zip|jpg|png)$'] # regex denylist
+    respectRobots: true # honor robots.txt Disallow rules
+  budgets:
+    security: { requiredHeaders: [content-security-policy] }
+    seo: { score: 0.9 }
+targets:
+  - url: https://quotes.toscrape.com/
+ci:
+  failOn: [error]
+  reporters: [json, terminal]

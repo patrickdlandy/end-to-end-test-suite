@@ -6,7 +6,8 @@ import { launchSession } from "./session.js";
 import { requiredCapabilities, requiredLhCategories, selectChecks } from "./registry.js";
 import { runLighthouse } from "./lighthouse-runner.js";
 import { captureTls } from "./tls.js";
-import { evaluate, type AuditReport, type TargetReport } from "../budgets/evaluate.js";
+import { crawlSeed, type CrawlResult } from "./crawl.js";
+import { evaluate, type AuditReport } from "../budgets/evaluate.js";
 
 export interface RunOptions {
   /** Max concurrent target navigations (static pool). */
@@ -24,7 +25,7 @@ export interface RunOptions {
 async function runTarget(
   target: ResolvedTarget,
   perfLimit: LimitFunction,
-): Promise<TargetReport> {
+): Promise<CrawlResult> {
   const checks = selectChecks(target.categories);
   const caps = requiredCapabilities(checks);
 
@@ -51,25 +52,31 @@ async function runTarget(
         results.push(await check.run({ target, artifacts }));
       }
       return {
-        url: target.url,
-        finalUrl: artifacts.finalUrl,
-        status: artifacts.status,
-        ok: true,
-        results,
-        captureDurationMs: artifacts.captureDurationMs,
+        report: {
+          url: target.url,
+          finalUrl: artifacts.finalUrl,
+          status: artifacts.status,
+          ok: true,
+          results,
+          captureDurationMs: artifacts.captureDurationMs,
+        },
+        links: artifacts.links,
       };
     } finally {
       await session.close();
     }
   } catch (err) {
     return {
-      url: target.url,
-      finalUrl: target.url,
-      status: 0,
-      ok: false,
-      error: err instanceof Error ? err.message : String(err),
-      results: [],
-      captureDurationMs: 0,
+      report: {
+        url: target.url,
+        finalUrl: target.url,
+        status: 0,
+        ok: false,
+        error: err instanceof Error ? err.message : String(err),
+        results: [],
+        captureDurationMs: 0,
+      },
+      links: [],
     };
   }
 }
@@ -88,10 +95,20 @@ export async function runAudit(
   const perfLimit = pLimit(1);
   const startedAt = now().toISOString();
 
-  const reports = await Promise.all(
-    targets.map((target) => limit(() => runTarget(target, perfLimit))),
+  const runOne = (target: ResolvedTarget) => runTarget(target, perfLimit);
+
+  const perSeed = await Promise.all(
+    targets.map((seed) =>
+      limit(async () => {
+        if (seed.crawl && seed.crawl.maxDepth > 0) {
+          return crawlSeed(seed, seed.crawl, runOne);
+        }
+        const { report } = await runOne(seed);
+        return [report];
+      }),
+    ),
   );
 
   const finishedAt = now().toISOString();
-  return evaluate(reports, options.failOn ?? ["error"], { startedAt, finishedAt });
+  return evaluate(perSeed.flat(), options.failOn ?? ["error"], { startedAt, finishedAt });
 }

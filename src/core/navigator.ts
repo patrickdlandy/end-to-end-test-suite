@@ -10,6 +10,7 @@ import type { ResolvedTarget } from "../config/schema.js";
 import type { Capability } from "../checks/types.js";
 import { captureAxe } from "./axe.js";
 import { capturePrivacySignals, fingerprintInitScript } from "./privacy-probe.js";
+import { newAuthedContext } from "./auth.js";
 import { hostOf, isThirdParty } from "../util/domain.js";
 
 function normalizeHeaders(headers: Record<string, string>): Record<string, string> {
@@ -36,9 +37,7 @@ export async function captureArtifacts(
   const responses: CapturedResponse[] = [];
   const consoleMessages: ConsoleMessage[] = [];
 
-  const context = await browser.newContext(
-    target.userAgent ? { userAgent: target.userAgent } : {},
-  );
+  const context = await newAuthedContext(browser, target);
   try {
     const page = await context.newPage();
 
@@ -84,6 +83,12 @@ export async function captureArtifacts(
     const html = await page.content();
     const title = await page.title();
 
+    // Anchor hrefs, resolved to absolute by the browser; deduped, http(s) only.
+    const rawLinks = await page.$$eval("a[href]", (els) =>
+      els.map((el) => (el as HTMLAnchorElement).href),
+    );
+    const links = [...new Set(rawLinks)].filter((u) => u.startsWith("http"));
+
     const cookies: CapturedCookie[] = (await context.cookies()).map((c) => ({
       name: c.name,
       value: c.value,
@@ -116,6 +121,7 @@ export async function captureArtifacts(
       responses,
       console: consoleMessages,
       captureDurationMs: Date.now() - start,
+      links,
       axe,
       privacy,
     };

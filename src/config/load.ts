@@ -38,6 +38,41 @@ export function parseConfig(source: string, filename: string): AuditConfig {
   return auditConfigSchema.parse(raw);
 }
 
+const ENV_PATTERN = /\$\{ENV:([A-Za-z_][A-Za-z0-9_]*)\}/g;
+
+/**
+ * Replace `${ENV:VAR}` references with environment values throughout a parsed
+ * config. Throws (listing every missing var) so auth never silently runs with
+ * empty credentials. `env` is injectable for testing.
+ */
+export function resolveSecrets<T>(value: T, env: NodeJS.ProcessEnv = process.env): T {
+  const missing = new Set<string>();
+
+  const walk = (node: unknown): unknown => {
+    if (typeof node === "string") {
+      return node.replace(ENV_PATTERN, (_match, name: string) => {
+        const resolved = env[name];
+        if (resolved === undefined) {
+          missing.add(name);
+          return "";
+        }
+        return resolved;
+      });
+    }
+    if (Array.isArray(node)) return node.map(walk);
+    if (node && typeof node === "object") {
+      return Object.fromEntries(Object.entries(node).map(([k, v]) => [k, walk(v)]));
+    }
+    return node;
+  };
+
+  const result = walk(value) as T;
+  if (missing.size > 0) {
+    throw new Error(`Missing environment variable(s) for config: ${[...missing].join(", ")}`);
+  }
+  return result;
+}
+
 /** Resolve every target by layering builtin defaults -> user defaults -> target. */
 export function resolveTargets(config: AuditConfig): ResolvedTarget[] {
   return config.targets.map((target) => {
@@ -54,6 +89,6 @@ export function resolveTargets(config: AuditConfig): ResolvedTarget[] {
 export function loadConfig(path: string): LoadedConfig {
   const absolute = resolve(path);
   const source = readFileSync(absolute, "utf8");
-  const config = parseConfig(source, absolute);
+  const config = resolveSecrets(parseConfig(source, absolute));
   return { config, targets: resolveTargets(config) };
 }

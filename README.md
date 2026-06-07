@@ -38,7 +38,19 @@ trend tracking, plus a terminal summary).
   workflow, a `dist` asset-copy step so the compiled bin finds vendored data, and
   an `npm run refresh-data` script.
 
-Remaining: Phase 5 activates the `auth`/`crawl` config placeholders. See
+- **Phase 5 (auth + crawl)** — activates the config blocks that were designed in
+  from the start:
+  - **auth** — per-target `basic` / `bearer` / `header` / `cookie` / `form` login.
+    Secrets are written as `${ENV:VAR}` and resolved from the environment at load
+    time (fails fast if a var is missing); auth is applied to the browser context
+    before capture and never serialized into reports. See
+    [`config/examples/auth.config.yaml`](config/examples/auth.config.yaml).
+  - **crawl** — treat each target as a seed and BFS its links
+    (`maxDepth`/`maxPages`/`sameOrigin`/`include`/`exclude`/`respectRobots`); every
+    discovered page is audited across all enabled categories. See
+    [`config/examples/crawl.config.yaml`](config/examples/crawl.config.yaml).
+
+All planned phases are implemented. See
 `/home/patrick/.claude/plans/help-me-make-a-smooth-curry.md` for the roadmap.
 
 ### Reporters

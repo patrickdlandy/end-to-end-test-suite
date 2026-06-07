@@ -1,0 +1,51 @@
+version: 1
+
+# Authentication examples. NEVER commit real credentials — use ${ENV:VAR}
+# references, resolved from the environment at load time and never written to
+# reports. Pick ONE auth block per target (shown here across separate targets).
+defaults:
+  categories: [security, best-practices]
+
+targets:
+  # HTTP Basic auth
+  - url: https://staging.example.com/
+    auth:
+      type: basic
+      username: ${ENV:STAGING_USER}
+      password: ${ENV:STAGING_PASS}
+
+  # Bearer token (sent as Authorization: Bearer <token>)
+  - url: https://api-ui.example.com/
+    auth:
+      type: bearer
+      token: ${ENV:API_TOKEN}
+
+  # Arbitrary request headers
+  - url: https://gated.example.com/
+    auth:
+      type: header
+      headers:
+        X-Preview-Key: ${ENV:PREVIEW_KEY}
+
+  # Pre-set cookies (e.g. a session cookie)
+  - url: https://app.example.com/dashboard
+    auth:
+      type: cookie
+      cookies:
+        - name: session
+          value: ${ENV:SESSION_COOKIE}
+
+  # Form login: navigate to loginUrl, fill fields, submit, then audit the target
+  - url: https://app.example.com/account
+    auth:
+      type: form
+      loginUrl: https://app.example.com/login
+      fields:
+        "#email": ${ENV:LOGIN_EMAIL}
+        "#password": ${ENV:LOGIN_PASSWORD}
+      submitSelector: "button[type=submit]"
+      waitForSelector: ".user-menu" # optional success signal
+
+ci:
+  failOn: [error]
+  reporters: [json, terminal]

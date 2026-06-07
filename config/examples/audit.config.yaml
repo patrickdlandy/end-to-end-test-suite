@@ -26,9 +26,7 @@ defaults:
       requireConsentBanner: true
       maxThirdPartyCookies: 0
 
-  # Extensibility placeholders — parsed today, activated in later phases.
-  auth: null
-  crawl: null
+  # Optional: auth (see auth.config.yaml) and crawl (see crawl.config.yaml).
 
 targets:
   - url: https://example.com/

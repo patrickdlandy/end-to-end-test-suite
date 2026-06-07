@@ -31,6 +31,7 @@ function artifactsWith(lh: LighthouseResult | undefined): PageArtifacts {
     responses: [],
     console: [],
     captureDurationMs: 1,
+    links: [],
     lighthouse: lh,
   };
 }

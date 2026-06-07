@@ -17,6 +17,7 @@ function artifacts(headers: Record<string, string>): PageArtifacts {
     responses: [],
     console: [],
     captureDurationMs: 1,
+    links: [],
   };
 }
 
