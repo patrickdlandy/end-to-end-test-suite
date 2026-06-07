@@ -11,10 +11,15 @@ trend tracking, plus a terminal summary).
 
 ## Status
 
-**Phase 0 (foundation) is complete** — a single vertical slice proving the full
-pipeline: config → navigate → check → budget → report → exit code. The implemented
-check is `security.headers` (required HTTP security headers). Remaining categories
-and Lighthouse integration land in later phases (see
+- **Phase 0 (foundation)** — full pipeline proven end-to-end: config → navigate →
+  check → budget → report → exit code. Check: `security.headers`.
+- **Phase 1 (Lighthouse)** — `performance.lighthouse` runs Lighthouse over the same
+  Playwright Chromium via its CDP port, captures Core Web Vitals (LCP/CLS/TBT, FCP,
+  Speed Index, TTI), takes the median of N runs, and gates against performance
+  budgets. Perf runs are serialized so concurrent measurements don't perturb each
+  other.
+
+Remaining categories land in later phases (see
 `/home/patrick/.claude/plans/help-me-make-a-smooth-curry.md`).
 
 ## Quick start
@@ -23,8 +28,11 @@ and Lighthouse integration land in later phases (see
 npm install
 npx playwright install chromium
 
-# Run against the example smoke config (GitHub passes, example.com fails)
+# Security headers (GitHub passes, example.com fails)
 npm run audit -- run --config config/examples/smoke.config.yaml
+
+# Lighthouse performance + Core Web Vitals
+npm run audit -- run --config config/examples/perf-smoke.config.yaml
 ```
 
 Exit code is `0` when all budgets pass and `1` when any `failOn` finding occurs —

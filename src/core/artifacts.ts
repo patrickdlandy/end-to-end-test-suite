@@ -1,3 +1,5 @@
+import type { LighthouseResult } from "./lighthouse-runner.js";
+
 /**
  * PageArtifacts — the shared bundle captured by a single navigation.
  *
@@ -74,4 +76,6 @@ export interface PageArtifacts {
   console: ConsoleMessage[];
   /** Wall-clock time the navigation + capture took, in ms. */
   captureDurationMs: number;
+  /** Median-aggregated Lighthouse result; present only when a check needs it. */
+  lighthouse?: LighthouseResult;
 }

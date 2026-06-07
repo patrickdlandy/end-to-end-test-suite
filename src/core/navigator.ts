@@ -1,4 +1,4 @@
-import { chromium, type Browser } from "playwright";
+import type { Browser } from "playwright";
 import type {
   CapturedCookie,
   CapturedRequest,
@@ -39,24 +39,22 @@ function normalizeHeaders(headers: Record<string, string>): Record<string, strin
 /**
  * Navigate to a target with Playwright and capture a PageArtifacts bundle.
  *
- * Listeners are attached before navigation so nothing is missed. A fresh browser
- * is launched per call with an OS-assigned debugging port (avoids cross-worker
- * "Target closed" collisions when run concurrently); later phases reuse the same
- * browser/CDP port for Lighthouse.
+ * Listeners are attached before navigation so nothing is missed. The browser is
+ * owned by the caller (a BrowserSession) so the same instance can also serve
+ * Lighthouse over its debugging port — one browser process, many analyzers.
  */
-export async function capture(target: ResolvedTarget): Promise<PageArtifacts> {
-  const browser: Browser = await chromium.launch({
-    args: ["--remote-debugging-port=0"],
-  });
-
+export async function captureArtifacts(
+  browser: Browser,
+  target: ResolvedTarget,
+): Promise<PageArtifacts> {
   const requests: CapturedRequest[] = [];
   const responses: CapturedResponse[] = [];
   const consoleMessages: ConsoleMessage[] = [];
 
+  const context = await browser.newContext(
+    target.userAgent ? { userAgent: target.userAgent } : {},
+  );
   try {
-    const context = await browser.newContext(
-      target.userAgent ? { userAgent: target.userAgent } : {},
-    );
     const page = await context.newPage();
 
     const pageDomain = registrableDomain(hostOf(target.url));
@@ -127,9 +125,8 @@ export async function capture(target: ResolvedTarget): Promise<PageArtifacts> {
       captureDurationMs: Date.now() - start,
     };
 
-    await context.close();
     return artifacts;
   } finally {
-    await browser.close();
+    await context.close();
   }
 }

@@ -1,0 +1,15 @@
+version: 1
+defaults:
+  categories: [performance]
+  runs: 1 # keep the smoke test fast; raise to 3+ for real audits
+  budgets:
+    performance:
+      score: 0.5
+      lcpMs: 10000
+      cls: 0.5
+      tbtMs: 2000
+targets:
+  - url: https://example.com/
+ci:
+  failOn: [error]
+  reporters: [json, terminal]
