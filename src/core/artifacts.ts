@@ -1,6 +1,7 @@
 import type { LighthouseResult } from "./lighthouse-runner.js";
 import type { TlsInfo } from "./tls.js";
 import type { AxeSummary } from "./axe.js";
+import type { PrivacySignals } from "./privacy-probe.js";
 
 /**
  * PageArtifacts — the shared bundle captured by a single navigation.
@@ -84,4 +85,6 @@ export interface PageArtifacts {
   tls?: TlsInfo;
   /** axe-core accessibility results; present only when a check needs it. */
   axe?: AxeSummary;
+  /** Privacy signals (fingerprinting counters + consent); present only when needed. */
+  privacy?: PrivacySignals;
 }

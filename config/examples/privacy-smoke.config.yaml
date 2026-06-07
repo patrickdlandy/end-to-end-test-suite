@@ -1,0 +1,13 @@
+version: 1
+defaults:
+  categories: [privacy]
+  budgets:
+    privacy:
+      maxThirdPartyTrackers: 5
+      maxThirdPartyCookies: 0
+      requireConsentBanner: true
+targets:
+  - url: https://www.cnn.com/
+ci:
+  failOn: [error]
+  reporters: [json, terminal]

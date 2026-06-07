@@ -14,6 +14,10 @@ import { seoRobotsCheck } from "../checks/seo/robots.js";
 import { seoStructuredDataCheck } from "../checks/seo/structured-data.js";
 import { consoleErrorsCheck } from "../checks/best-practices/console.js";
 import { httpsCheck } from "../checks/best-practices/https.js";
+import { trackersCheck } from "../checks/privacy/trackers.js";
+import { thirdPartyCookiesCheck } from "../checks/privacy/third-party-cookies.js";
+import { fingerprintingCheck } from "../checks/privacy/fingerprinting.js";
+import { consentCheck } from "../checks/privacy/consent.js";
 import type { LhCategory } from "./lighthouse-runner.js";
 
 /**
@@ -41,6 +45,11 @@ export const ALL_CHECKS: Check[] = [
   // best practices
   consoleErrorsCheck,
   httpsCheck,
+  // privacy
+  trackersCheck,
+  thirdPartyCookiesCheck,
+  fingerprintingCheck,
+  consentCheck,
 ];
 
 /** Map our audit categories to the Lighthouse category ids they read. */

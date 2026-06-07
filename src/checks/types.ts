@@ -14,7 +14,7 @@ export const CATEGORIES = [
 export type Category = (typeof CATEGORIES)[number];
 
 /** Capabilities a check may require from the orchestrator before it can run. */
-export type Capability = "artifacts" | "lighthouse" | "axe" | "tls";
+export type Capability = "artifacts" | "lighthouse" | "axe" | "tls" | "privacy";
 
 /** Severity of an individual finding. */
 export type Severity = "error" | "warning" | "info";

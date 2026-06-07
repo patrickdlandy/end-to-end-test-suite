@@ -25,9 +25,20 @@ trend tracking, plus a terminal summary).
   - **Accessibility:** `axe` (axe-core, WCAG 2.x AA) gated by impact budgets.
   - **SEO:** `meta`, `indexability`, `robots`, `structured-data`.
   - **Best practices:** `console`, `https`.
+- **Phase 3 (privacy)** — all six categories now have checks:
+  - **Privacy:** `trackers` (third-party requests classified against a vendored
+    Disconnect blocklist by category), `third-party-cookies`, `fingerprinting`
+    (canvas/WebGL/audio/font API instrumentation injected before load), `consent`
+    (CMP-global + banner detection: IAB TCF, OneTrust, Cookiebot, …).
 
-The **privacy** category lands in Phase 3 (trackers, fingerprinting, consent). See
+All six categories are implemented. Later phases cover reporting polish (HTML,
+JUnit, GitHub annotations), CI wiring, blocklist/DB refresh tooling, and
+auth/crawl activation. See
 `/home/patrick/.claude/plans/help-me-make-a-smooth-curry.md` for the roadmap.
+
+> Note: tracker/fingerprint signals depend on third-party scripts actually
+> executing. Some sites serve stripped pages to headless browsers or lazy-load
+> trackers; `waitUntil: load` often surfaces more than `networkidle` on such sites.
 
 ## Quick start
 

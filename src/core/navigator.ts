@@ -9,26 +9,8 @@ import type {
 import type { ResolvedTarget } from "../config/schema.js";
 import type { Capability } from "../checks/types.js";
 import { captureAxe } from "./axe.js";
-
-/** Lowercase the host of a URL, returning "" if it can't be parsed. */
-function hostOf(url: string): string {
-  try {
-    return new URL(url).host.toLowerCase();
-  } catch {
-    return "";
-  }
-}
-
-/**
- * eTLD+1 approximation: last two labels of a host. Good enough for first-party
- * vs third-party classification of the common cases; a public-suffix-list based
- * implementation can replace this when the privacy phase needs precision.
- */
-function registrableDomain(host: string): string {
-  const parts = host.split(".").filter(Boolean);
-  if (parts.length <= 2) return host;
-  return parts.slice(-2).join(".");
-}
+import { capturePrivacySignals, fingerprintInitScript } from "./privacy-probe.js";
+import { hostOf, isThirdParty } from "../util/domain.js";
 
 function normalizeHeaders(headers: Record<string, string>): Record<string, string> {
   const out: Record<string, string> = {};
@@ -60,7 +42,11 @@ export async function captureArtifacts(
   try {
     const page = await context.newPage();
 
-    const pageDomain = registrableDomain(hostOf(target.url));
+    const pageHost = hostOf(target.url);
+
+    if (caps.has("privacy")) {
+      await page.addInitScript(fingerprintInitScript);
+    }
 
     page.on("request", (request) => {
       const host = hostOf(request.url());
@@ -69,7 +55,7 @@ export async function captureArtifacts(
         method: request.method(),
         resourceType: request.resourceType(),
         host,
-        thirdParty: host !== "" && registrableDomain(host) !== pageDomain,
+        thirdParty: isThirdParty(host, pageHost),
       });
     });
 
@@ -113,8 +99,9 @@ export async function captureArtifacts(
       ? normalizeHeaders(mainResponse.headers())
       : {};
 
-    // axe must run while the page is live, so it is captured here (not in a check).
+    // axe and privacy probes must read the live page, so they run here (not in a check).
     const axe = caps.has("axe") ? await captureAxe(page) : undefined;
+    const privacy = caps.has("privacy") ? await capturePrivacySignals(page) : undefined;
 
     const artifacts: PageArtifacts = {
       requestedUrl: target.url,
@@ -130,6 +117,7 @@ export async function captureArtifacts(
       console: consoleMessages,
       captureDurationMs: Date.now() - start,
       axe,
+      privacy,
     };
 
     return artifacts;
