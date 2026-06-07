@@ -76,6 +76,21 @@ describe("lighthousePerfCheck", () => {
     expect(errors).toHaveLength(4);
   });
 
+  it("renders a breached CLS with decimals, not Math.round to 0", async () => {
+    const lh = {
+      categoryScores: { performance: 0.7 },
+      metrics: { lcpMs: 1000, cls: 0.265, tbtMs: 10, fcpMs: 800, speedIndexMs: 900, ttiMs: 1100 },
+      runs: 1,
+    };
+    const result = await lighthousePerfCheck.run({
+      target: target({ cls: 0.1 }),
+      artifacts: artifactsWith(lh),
+    });
+    const cls = result.findings.find((f) => f.message.startsWith("CLS"));
+    expect(cls?.message).toContain("CLS 0.265");
+    expect(cls?.message).not.toContain("CLS 0 ");
+  });
+
   it("reports inpMs as info (lab proxy note), not an error", async () => {
     const result = await lighthousePerfCheck.run({
       target: target({ inpMs: 200 }),

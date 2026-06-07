@@ -1,5 +1,14 @@
 import { makeResult, type Check, type CheckContext, type CheckResult, type Finding } from "../types.js";
 
+/**
+ * Format a metric for display: millisecond metrics read best as integers, but
+ * unitless metrics like CLS are fractional and must keep their decimals
+ * (Math.round would render 0.265 as "0").
+ */
+function formatValue(value: number, unit: string): string {
+  return unit === "ms" ? String(Math.round(value)) : String(Number(value.toFixed(3)));
+}
+
 /** Compare an observed value against a max budget, producing an error finding if exceeded. */
 function checkMax(
   label: string,
@@ -11,7 +20,7 @@ function checkMax(
   if (observed <= max) return undefined;
   return {
     severity: "error",
-    message: `${label} ${Math.round(observed)}${unit} exceeds budget ${max}${unit}`,
+    message: `${label} ${formatValue(observed, unit)}${unit} exceeds budget ${max}${unit}`,
     detail: { observed, budget: max },
   };
 }
