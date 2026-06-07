@@ -1,0 +1,16 @@
+version: 1
+defaults:
+  categories: [security]
+  budgets:
+    security:
+      requiredHeaders:
+        - content-security-policy
+        - strict-transport-security
+        - x-content-type-options
+        - referrer-policy
+targets:
+  - url: https://github.com/ # strong: sets these headers
+  - url: https://example.com/ # weak: sets none of them
+ci:
+  failOn: [error]
+  reporters: [json, terminal]

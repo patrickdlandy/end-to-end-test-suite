@@ -1,0 +1,11 @@
+node_modules/
+dist/
+reports/
+*.log
+
+# Local / secret-bearing configs (commit only examples)
+config/*.local.yaml
+config/*.local.yml
+config/*.local.json
+.env
+.env.*

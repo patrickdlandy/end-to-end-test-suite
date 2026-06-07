@@ -1,0 +1,42 @@
+version: 1
+
+# Settings applied to every target unless overridden per-target.
+defaults:
+  device: mobile
+  categories: [security, privacy, performance, accessibility, seo, best-practices]
+  runs: 3 # Lighthouse runs; median taken (perf variance). Used from Phase 1 on.
+  timeoutMs: 60000
+  waitUntil: networkidle
+  budgets:
+    performance: { score: 0.85, lcpMs: 2500, cls: 0.1, tbtMs: 200, inpMs: 200 }
+    accessibility: { score: 0.95, maxCritical: 0, maxSerious: 0 }
+    seo: { score: 0.9 }
+    bestPractices: { score: 0.9 }
+    security:
+      requiredHeaders:
+        - content-security-policy
+        - strict-transport-security
+        - x-content-type-options
+        - referrer-policy
+      minTlsVersion: "1.2"
+      certMinDaysToExpiry: 14
+      maxVulnLibs: 0
+    privacy:
+      maxThirdPartyTrackers: 5
+      requireConsentBanner: true
+      maxThirdPartyCookies: 0
+
+  # Extensibility placeholders — parsed today, activated in later phases.
+  auth: null
+  crawl: null
+
+targets:
+  - url: https://example.com/
+  - url: https://example.com/index.html
+    device: desktop
+    budgets:
+      performance: { lcpMs: 3000 } # deep-merged over defaults
+
+ci:
+  failOn: [error]
+  reporters: [json, terminal]

@@ -1,0 +1,50 @@
+{
+  "name": "end-to-end-test-suite",
+  "version": "0.1.0",
+  "description": "Suite of comprehensive, platform-agnostic black box tests for websites",
+  "type": "module",
+  "bin": {
+    "audit": "./dist/bin/audit.js"
+  },
+  "exports": {
+    ".": "./dist/src/index.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "audit": "tsx bin/audit.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "audit",
+    "lighthouse",
+    "accessibility",
+    "security",
+    "privacy",
+    "seo",
+    "performance",
+    "playwright",
+    "e2e"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "cli-table3": "^0.6.5",
+    "commander": "^12.1.0",
+    "p-limit": "^6.1.0",
+    "picocolors": "^1.1.1",
+    "playwright": "^1.49.0",
+    "yaml": "^2.6.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
