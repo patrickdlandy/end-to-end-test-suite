@@ -18,9 +18,16 @@ trend tracking, plus a terminal summary).
   Speed Index, TTI), takes the median of N runs, and gates against performance
   budgets. Perf runs are serialized so concurrent measurements don't perturb each
   other.
+- **Phase 2 (breadth)** — checks across four more categories:
+  - **Security:** `headers`, `tls` (cert trust/expiry/protocol), `cookies`,
+    `mixed-content`, `cors`, `server-info`, `vuln-libs` (retire.js against a
+    vendored vulnerability DB at `src/data/`).
+  - **Accessibility:** `axe` (axe-core, WCAG 2.x AA) gated by impact budgets.
+  - **SEO:** `meta`, `indexability`, `robots`, `structured-data`.
+  - **Best practices:** `console`, `https`.
 
-Remaining categories land in later phases (see
-`/home/patrick/.claude/plans/help-me-make-a-smooth-curry.md`).
+The **privacy** category lands in Phase 3 (trackers, fingerprinting, consent). See
+`/home/patrick/.claude/plans/help-me-make-a-smooth-curry.md` for the roadmap.
 
 ## Quick start
 
@@ -33,6 +40,9 @@ npm run audit -- run --config config/examples/smoke.config.yaml
 
 # Lighthouse performance + Core Web Vitals
 npm run audit -- run --config config/examples/perf-smoke.config.yaml
+
+# All six categories against one URL
+npm run audit -- run --config config/examples/full.config.yaml
 ```
 
 Exit code is `0` when all budgets pass and `1` when any `failOn` finding occurs —

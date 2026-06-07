@@ -5,6 +5,7 @@ import { captureArtifacts } from "./navigator.js";
 import { launchSession } from "./session.js";
 import { requiredCapabilities, requiredLhCategories, selectChecks } from "./registry.js";
 import { runLighthouse } from "./lighthouse-runner.js";
+import { captureTls } from "./tls.js";
 import { evaluate, type AuditReport, type TargetReport } from "../budgets/evaluate.js";
 
 export interface RunOptions {
@@ -30,7 +31,11 @@ async function runTarget(
   try {
     const session = await launchSession(target);
     try {
-      const artifacts = await captureArtifacts(session.browser, target);
+      const artifacts = await captureArtifacts(session.browser, target, caps);
+
+      if (caps.has("tls")) {
+        artifacts.tls = await captureTls(target);
+      }
 
       if (caps.has("lighthouse")) {
         const lhCategories = requiredLhCategories(checks);

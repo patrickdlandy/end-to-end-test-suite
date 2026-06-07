@@ -1,4 +1,6 @@
 import type { LighthouseResult } from "./lighthouse-runner.js";
+import type { TlsInfo } from "./tls.js";
+import type { AxeSummary } from "./axe.js";
 
 /**
  * PageArtifacts — the shared bundle captured by a single navigation.
@@ -78,4 +80,8 @@ export interface PageArtifacts {
   captureDurationMs: number;
   /** Median-aggregated Lighthouse result; present only when a check needs it. */
   lighthouse?: LighthouseResult;
+  /** TLS handshake facts; present only when a check needs it. */
+  tls?: TlsInfo;
+  /** axe-core accessibility results; present only when a check needs it. */
+  axe?: AxeSummary;
 }

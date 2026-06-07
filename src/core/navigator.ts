@@ -7,6 +7,8 @@ import type {
   PageArtifacts,
 } from "./artifacts.js";
 import type { ResolvedTarget } from "../config/schema.js";
+import type { Capability } from "../checks/types.js";
+import { captureAxe } from "./axe.js";
 
 /** Lowercase the host of a URL, returning "" if it can't be parsed. */
 function hostOf(url: string): string {
@@ -46,6 +48,7 @@ function normalizeHeaders(headers: Record<string, string>): Record<string, strin
 export async function captureArtifacts(
   browser: Browser,
   target: ResolvedTarget,
+  caps: ReadonlySet<Capability> = new Set(),
 ): Promise<PageArtifacts> {
   const requests: CapturedRequest[] = [];
   const responses: CapturedResponse[] = [];
@@ -110,6 +113,9 @@ export async function captureArtifacts(
       ? normalizeHeaders(mainResponse.headers())
       : {};
 
+    // axe must run while the page is live, so it is captured here (not in a check).
+    const axe = caps.has("axe") ? await captureAxe(page) : undefined;
+
     const artifacts: PageArtifacts = {
       requestedUrl: target.url,
       finalUrl,
@@ -123,6 +129,7 @@ export async function captureArtifacts(
       responses,
       console: consoleMessages,
       captureDurationMs: Date.now() - start,
+      axe,
     };
 
     return artifacts;
