@@ -53,6 +53,32 @@ trend tracking, plus a terminal summary).
 All planned phases are implemented. See
 `/home/patrick/.claude/plans/help-me-make-a-smooth-curry.md` for the roadmap.
 
+## Responsible use (auditing sites you don't own)
+
+A full run loads each page in a real browser once for capture and again per
+Lighthouse `runs`, so high `runs`, crawling (`maxPages` × `runs`), many targets,
+or repeated CI runs against a third-party origin can look abusive and may trigger
+rate limiting or anti-bot challenges. Auditing a site you don't own can also
+breach its Terms of Service even though the security/TLS/header checks themselves
+are passive.
+
+The suite ships **polite defaults** via the run-level `politeness` block:
+
+| Field | Default | Effect |
+|---|---|---|
+| `minRequestIntervalMs` | `1000` | Minimum spacing between hits to the same host (also spaces repeated Lighthouse runs). |
+| `maxConcurrency` | `2` | Max targets navigated in parallel (CLI `--concurrency` overrides). |
+| `respectRobots` | `false` | When `true`, a primary target URL disallowed by robots.txt is skipped, not fetched. |
+| `throttleLocalhost` | `false` | The throttle is skipped for loopback/`localhost`/`.local` so dev audits stay fast. |
+
+For a site you don't own, start from
+[`config/examples/polite.config.yaml`](config/examples/polite.config.yaml):
+`runs: 1`, `respectRobots: true`, and an identifying `userAgent` (transparent, but
+note some WAFs block obvious bots — drop it to present as a normal headless
+browser). Even so, anti-bot systems may serve a challenge/stripped page rather
+than real content; that surfaces as a navigation failure or skewed results, not a
+suite error.
+
 ### Reporters
 
 Select with `ci.reporters` in config or `--reporters`. Files are written under

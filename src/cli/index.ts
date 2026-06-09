@@ -46,6 +46,7 @@ export function buildProgram(): Command {
       const report = await runAudit(targets, {
         concurrency: opts.concurrency,
         failOn: config.ci.failOn,
+        politeness: config.politeness,
       });
 
       const outDir: string = opts.outDir;

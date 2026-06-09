@@ -1,0 +1,25 @@
+version: 1
+
+# Recommended settings for auditing a site you do NOT own. Goal: resemble a
+# careful human visitor, identify yourself, and honor robots.txt.
+defaults:
+  categories: [security, privacy, performance, accessibility, seo, best-practices]
+  runs: 1 # avoid repeatedly reloading the page
+  waitUntil: load
+  # Identify the auditor. Tradeoff: transparent, but some WAFs block obvious bots;
+  # drop this line to present as a normal headless browser instead.
+  userAgent: "Mozilla/5.0 (compatible; WebAuditSuite/0.1; +https://github.com/patrickdlandy/end-to-end-test-suite)"
+
+# Run-level politeness (these are also the built-in defaults, shown explicitly).
+politeness:
+  minRequestIntervalMs: 1000 # >= 1s between hits to the same host
+  maxConcurrency: 2 # few targets in flight at once
+  respectRobots: true # skip URLs disallowed by robots.txt
+  throttleLocalhost: false # local dev stays fast
+
+targets:
+  - url: https://example.com/
+
+ci:
+  failOn: [error]
+  reporters: [json, terminal]

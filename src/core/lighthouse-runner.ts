@@ -1,3 +1,4 @@
+import { setTimeout as sleepMs } from "node:timers/promises";
 import lighthouse, { desktopConfig } from "lighthouse";
 import type { BrowserSession } from "./session.js";
 import type { ResolvedTarget } from "../config/schema.js";
@@ -110,11 +111,16 @@ export async function runLighthouse(
   session: BrowserSession,
   target: ResolvedTarget,
   categories: LhCategory[],
+  minIntervalMs = 0,
 ): Promise<LighthouseResult> {
   const config = target.device === "desktop" ? desktopConfig : undefined;
   const runs: SingleRun[] = [];
 
   for (let i = 0; i < target.runs; i++) {
+    // Space repeated reloads of the same page so a multi-run audit isn't a burst.
+    if (i > 0 && minIntervalMs > 0) {
+      await sleepMs(minIntervalMs);
+    }
     const runnerResult = await lighthouse(
       target.url,
       {

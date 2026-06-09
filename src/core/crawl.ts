@@ -49,7 +49,8 @@ export function robotsAllows(rules: RobotsRules, pathname: string): boolean {
   return !rules.disallow.some((rule) => pathname.startsWith(rule));
 }
 
-async function loadRobots(origin: string, timeoutMs: number): Promise<RobotsRules> {
+/** Fetch and parse robots.txt for an origin; empty rules on any failure. */
+export async function loadRobots(origin: string, timeoutMs: number): Promise<RobotsRules> {
   try {
     const res = await fetch(`${origin}/robots.txt`, { signal: AbortSignal.timeout(timeoutMs) });
     if (!res.ok) return { disallow: [] };

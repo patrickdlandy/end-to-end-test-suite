@@ -145,12 +145,33 @@ export const ciSchema = z
   })
   .strict();
 
+/**
+ * Run-level politeness controls for auditing sites you don't own. Defaults make
+ * a run resemble a careful human visitor; the throttle is skipped for local
+ * hosts so dev audits stay fast.
+ */
+export const politenessSchema = z
+  .object({
+    /** Minimum spacing between navigations to the same host, in ms. */
+    minRequestIntervalMs: z.number().int().nonnegative().default(1000),
+    /** Cap on concurrent target navigations (CLI --concurrency overrides). */
+    maxConcurrency: z.number().int().positive().default(2),
+    /** Skip auditing a primary target URL disallowed by robots.txt. */
+    respectRobots: z.boolean().default(false),
+    /** Also throttle loopback/localhost/.local hosts (off by default). */
+    throttleLocalhost: z.boolean().default(false),
+  })
+  .strict();
+
+export type Politeness = z.infer<typeof politenessSchema>;
+
 export const auditConfigSchema = z
   .object({
     version: z.literal(1),
     defaults: baseSettingsSchema.default({}),
     targets: z.array(targetSchema).min(1),
     ci: ciSchema.default({ failOn: ["error"], reporters: ["json", "terminal"] }),
+    politeness: politenessSchema.default({}),
   })
   .strict();
 
