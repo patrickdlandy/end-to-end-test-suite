@@ -22,6 +22,17 @@ function normalizeHeaders(headers: Record<string, string>): Record<string, strin
 }
 
 /**
+ * Dedupe extracted anchor hrefs and keep only absolute http(s) links. Tolerant of
+ * non-string input: the `a[href]` selector can match SVG <a> elements whose `.href`
+ * serializes across the Playwright boundary as a non-string, so guard before filtering.
+ */
+export function selectHttpLinks(raw: unknown[]): string[] {
+  return [...new Set(raw)].filter(
+    (u): u is string => typeof u === "string" && u.startsWith("http"),
+  );
+}
+
+/**
  * Navigate to a target with Playwright and capture a PageArtifacts bundle.
  *
  * Listeners are attached before navigation so nothing is missed. The browser is
@@ -84,10 +95,28 @@ export async function captureArtifacts(
     const title = await page.title();
 
     // Anchor hrefs, resolved to absolute by the browser; deduped, http(s) only.
-    const rawLinks = await page.$$eval("a[href]", (els) =>
-      els.map((el) => (el as HTMLAnchorElement).href),
-    );
-    const links = [...new Set(rawLinks)].filter((u) => u.startsWith("http"));
+    // The `a[href]` selector also matches SVG <a> elements, whose `.href` is an
+    // SVGAnimatedString (not a string); read its `.baseVal` and resolve to absolute.
+    // Link extraction is auxiliary (only crawl consumes it), so never let it abort
+    // the whole page capture — default to no links if anything goes wrong.
+    let links: string[] = [];
+    try {
+      const rawLinks = await page.$$eval("a[href]", (els) =>
+        els.map((el) => {
+          const href = (el as HTMLAnchorElement | SVGAElement).href;
+          if (typeof href === "string") return href; // HTMLAnchorElement: absolute
+          const raw = href?.baseVal ?? el.getAttribute("href") ?? ""; // SVGAElement
+          try {
+            return new URL(raw, document.baseURI).href;
+          } catch {
+            return "";
+          }
+        }),
+      );
+      links = selectHttpLinks(rawLinks);
+    } catch {
+      links = [];
+    }
 
     const cookies: CapturedCookie[] = (await context.cookies()).map((c) => ({
       name: c.name,
