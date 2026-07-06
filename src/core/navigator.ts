@@ -84,10 +84,24 @@ export async function captureArtifacts(
     const title = await page.title();
 
     // Anchor hrefs, resolved to absolute by the browser; deduped, http(s) only.
+    // Read the raw `href` attribute and resolve it ourselves rather than using
+    // `el.href`: on an SVG <a> that property is an SVGAnimatedString (not a
+    // string), which previously threw "u.startsWith is not a function" and
+    // aborted the whole capture.
     const rawLinks = await page.$$eval("a[href]", (els) =>
-      els.map((el) => (el as HTMLAnchorElement).href),
+      els.map((el) => {
+        const raw = el.getAttribute("href");
+        if (!raw) return null;
+        try {
+          return new URL(raw, el.baseURI).href;
+        } catch {
+          return null;
+        }
+      }),
     );
-    const links = [...new Set(rawLinks)].filter((u) => u.startsWith("http"));
+    const links = [...new Set(rawLinks)].filter(
+      (u): u is string => typeof u === "string" && u.startsWith("http"),
+    );
 
     const cookies: CapturedCookie[] = (await context.cookies()).map((c) => ({
       name: c.name,
