@@ -1602,6 +1602,66 @@
       },
       {
         "atOrAbove": "0",
+        "below": "5.10.10",
+        "severity": "high",
+        "cwe": [
+          "CWE-79"
+        ],
+        "identifiers": {
+          "summary": "TinyMCE Cross-Site Scripting (XSS) vulnerability using through data-mce- prefixed src, href, style attributes",
+          "githubID": "GHSA-q742-qvgc-gc2f",
+          "CVE": [
+            "CVE-2026-47759"
+          ]
+        },
+        "info": [
+          "https://github.com/tinymce/tinymce/security/advisories/GHSA-q742-qvgc-gc2f",
+          "https://www.tiny.cloud/docs/tinymce/7/7.9.3-release-notes/#overview",
+          "https://www.tiny.cloud/docs/tinymce/8/8.5.1-release-notes/#overview"
+        ]
+      },
+      {
+        "atOrAbove": "0",
+        "below": "5.10.10",
+        "severity": "high",
+        "cwe": [
+          "CWE-79"
+        ],
+        "identifiers": {
+          "summary": "TinyMCE Cross-Site Scripting (XSS) vulnerability through `mce:protected` comments",
+          "githubID": "GHSA-v98h-vmpc-fpqv",
+          "CVE": [
+            "CVE-2026-47762"
+          ]
+        },
+        "info": [
+          "https://github.com/tinymce/tinymce/security/advisories/GHSA-v98h-vmpc-fpqv",
+          "https://www.tiny.cloud/docs/tinymce/7/7.9.3-release-notes/#overview",
+          "https://www.tiny.cloud/docs/tinymce/8/8.5.1-release-notes/#overview"
+        ]
+      },
+      {
+        "atOrAbove": "0",
+        "below": "5.10.10",
+        "severity": "high",
+        "cwe": [
+          "CWE-79"
+        ],
+        "identifiers": {
+          "summary": "TinyMCE Cross-Site Scripting (XSS) vulnerability using media plugin `data-mce-object` injection",
+          "githubID": "GHSA-vg35-5wq7-3x7w",
+          "CVE": [
+            "CVE-2026-47761"
+          ]
+        },
+        "info": [
+          "https://github.com/tinymce/tinymce/security/advisories/GHSA-vg35-5wq7-3x7w",
+          "https://www.tiny.cloud/docs/tinymce/7/7.9.3-release-notes/#overview",
+          "https://www.tiny.cloud/docs/tinymce/8/8.5.1-release-notes/#overview"
+        ]
+      },
+      {
+        "atOrAbove": "0",
         "below": "5.11.0",
         "cwe": [
           "CWE-79"
@@ -2011,66 +2071,6 @@
       {
         "atOrAbove": "8.0.0",
         "below": "8.5.1",
-        "severity": "high",
-        "cwe": [
-          "CWE-79"
-        ],
-        "identifiers": {
-          "summary": "TinyMCE Cross-Site Scripting (XSS) vulnerability using media plugin `data-mce-object` injection",
-          "githubID": "GHSA-vg35-5wq7-3x7w",
-          "CVE": [
-            "CVE-2026-47761"
-          ]
-        },
-        "info": [
-          "https://github.com/tinymce/tinymce/security/advisories/GHSA-vg35-5wq7-3x7w",
-          "https://www.tiny.cloud/docs/tinymce/7/7.9.3-release-notes/#overview",
-          "https://www.tiny.cloud/docs/tinymce/8/8.5.1-release-notes/#overview"
-        ]
-      },
-      {
-        "atOrAbove": "0",
-        "below": "999.999.999",
-        "severity": "high",
-        "cwe": [
-          "CWE-79"
-        ],
-        "identifiers": {
-          "summary": "TinyMCE Cross-Site Scripting (XSS) vulnerability using through data-mce- prefixed src, href, style attributes",
-          "githubID": "GHSA-q742-qvgc-gc2f",
-          "CVE": [
-            "CVE-2026-47759"
-          ]
-        },
-        "info": [
-          "https://github.com/tinymce/tinymce/security/advisories/GHSA-q742-qvgc-gc2f",
-          "https://www.tiny.cloud/docs/tinymce/7/7.9.3-release-notes/#overview",
-          "https://www.tiny.cloud/docs/tinymce/8/8.5.1-release-notes/#overview"
-        ]
-      },
-      {
-        "atOrAbove": "0",
-        "below": "999.999.999",
-        "severity": "high",
-        "cwe": [
-          "CWE-79"
-        ],
-        "identifiers": {
-          "summary": "TinyMCE Cross-Site Scripting (XSS) vulnerability through `mce:protected` comments",
-          "githubID": "GHSA-v98h-vmpc-fpqv",
-          "CVE": [
-            "CVE-2026-47762"
-          ]
-        },
-        "info": [
-          "https://github.com/tinymce/tinymce/security/advisories/GHSA-v98h-vmpc-fpqv",
-          "https://www.tiny.cloud/docs/tinymce/7/7.9.3-release-notes/#overview",
-          "https://www.tiny.cloud/docs/tinymce/8/8.5.1-release-notes/#overview"
-        ]
-      },
-      {
-        "atOrAbove": "0",
-        "below": "999.999.999",
         "severity": "high",
         "cwe": [
           "CWE-79"
@@ -3535,6 +3535,30 @@
         ]
       },
       {
+        "atOrAbove": "1.2.0-rc.3",
+        "below": "1.8.4",
+        "severity": "high",
+        "cwe": [
+          "CWE-79",
+          "CWE-791"
+        ],
+        "identifiers": {
+          "summary": "Angular's deprecated package has a Cross-Site Scripting issue",
+          "githubID": "GHSA-7x27-g8rg-x87w",
+          "CVE": [
+            "CVE-2026-11998"
+          ]
+        },
+        "info": [
+          "https://access.redhat.com/security/cve/CVE-2026-11998",
+          "https://bugzilla.redhat.com/show_bug.cgi?id=2492579",
+          "https://codepen.io/herodevs/pen/JobQdmz/5b3896f56fab66f20cd25e698cf3faa8",
+          "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-11998.json",
+          "https://www.herodevs.com/vulnerability-directory/cve-2026-11998",
+          "https://www.herodevs.com/vulnerability-directory/cve-2026-11998?nes-for-angularjs"
+        ]
+      },
+      {
         "atOrAbove": "1.3.0",
         "below": "1.8.4",
         "cwe": [
@@ -3766,6 +3790,46 @@
       {
         "atOrAbove": "0",
         "below": "18.2.15",
+        "severity": "medium",
+        "cwe": [
+          "CWE-79"
+        ],
+        "identifiers": {
+          "summary": "@angular/core: Angular Template and Dynamic Component Namespace Bypass leading to Cross-Site Scripting (XSS)",
+          "githubID": "GHSA-692r-grfm-v8x7",
+          "CVE": [
+            "CVE-2026-52725"
+          ]
+        },
+        "info": [
+          "https://github.com/angular/angular/security/advisories/GHSA-692r-grfm-v8x7",
+          "https://github.com/angular/angular/pull/68686",
+          "https://github.com/angular/angular/pull/68713"
+        ]
+      },
+      {
+        "atOrAbove": "0",
+        "below": "18.2.15",
+        "severity": "medium",
+        "cwe": [
+          "CWE-79"
+        ],
+        "identifiers": {
+          "summary": "Angular: Template and Attribute Namespace Sanitization Bypass (XSS)",
+          "githubID": "GHSA-f3m7-gqxr-g87x",
+          "CVE": [
+            "CVE-2026-50557"
+          ]
+        },
+        "info": [
+          "https://github.com/angular/angular/security/advisories/GHSA-f3m7-gqxr-g87x",
+          "https://github.com/angular/angular/pull/68689",
+          "https://github.com/angular/angular/pull/68868"
+        ]
+      },
+      {
+        "atOrAbove": "0",
+        "below": "18.2.15",
         "severity": "high",
         "cwe": [
           "CWE-79"
@@ -3864,6 +3928,67 @@
         ]
       },
       {
+        "atOrAbove": "19.0.0-next.0",
+        "below": "19.2.22",
+        "severity": "medium",
+        "cwe": [
+          "CWE-79"
+        ],
+        "identifiers": {
+          "summary": "Angular: Template and Attribute Namespace Sanitization Bypass (XSS)",
+          "githubID": "GHSA-f3m7-gqxr-g87x",
+          "CVE": [
+            "CVE-2026-50557"
+          ]
+        },
+        "info": [
+          "https://github.com/angular/angular/security/advisories/GHSA-f3m7-gqxr-g87x",
+          "https://github.com/angular/angular/pull/68689",
+          "https://github.com/angular/angular/pull/68868"
+        ]
+      },
+      {
+        "atOrAbove": "19.0.0-next.0",
+        "below": "19.2.23",
+        "severity": "medium",
+        "cwe": [
+          "CWE-79"
+        ],
+        "identifiers": {
+          "summary": "@angular/core: Angular Template and Dynamic Component Namespace Bypass leading to Cross-Site Scripting (XSS)",
+          "githubID": "GHSA-692r-grfm-v8x7",
+          "CVE": [
+            "CVE-2026-52725"
+          ]
+        },
+        "info": [
+          "https://github.com/angular/angular/security/advisories/GHSA-692r-grfm-v8x7",
+          "https://github.com/angular/angular/pull/68686",
+          "https://github.com/angular/angular/pull/68713"
+        ]
+      },
+      {
+        "atOrAbove": "0",
+        "below": "19.2.26",
+        "severity": "high",
+        "cwe": [
+          "CWE-79",
+          "CWE-471"
+        ],
+        "identifiers": {
+          "summary": "Angular Client Hydration DOM Clobbering & Response-Cache Poisoning",
+          "githubID": "GHSA-rgjc-h3x7-9mwg",
+          "CVE": [
+            "CVE-2026-54267"
+          ]
+        },
+        "info": [
+          "https://github.com/angular/angular/security/advisories/GHSA-rgjc-h3x7-9mwg",
+          "https://github.com/angular/angular/pull/69064",
+          "https://github.com/angular/angular/commit/6bde84fa8e6a5770b54040fbbc9bf10d5d0386fa"
+        ]
+      },
+      {
         "atOrAbove": "20.0.0-next.0",
         "below": "20.3.17",
         "severity": "high",
@@ -3911,6 +4036,67 @@
           "https://github.com/angular/angular/commit/78dea55351fb305b33a919c43a6b363137eca166",
           "https://github.com/angular/angular/commit/8630319f74c9575a21693d875cc7d5252516146d",
           "https://github.com/angular/angular/commit/ed2d324f9cc12aab6cfa0569ef10b73243a62c65"
+        ]
+      },
+      {
+        "atOrAbove": "20.0.0-next.0",
+        "below": "20.3.22",
+        "severity": "medium",
+        "cwe": [
+          "CWE-79"
+        ],
+        "identifiers": {
+          "summary": "@angular/core: Angular Template and Dynamic Component Namespace Bypass leading to Cross-Site Scripting (XSS)",
+          "githubID": "GHSA-692r-grfm-v8x7",
+          "CVE": [
+            "CVE-2026-52725"
+          ]
+        },
+        "info": [
+          "https://github.com/angular/angular/security/advisories/GHSA-692r-grfm-v8x7",
+          "https://github.com/angular/angular/pull/68686",
+          "https://github.com/angular/angular/pull/68713"
+        ]
+      },
+      {
+        "atOrAbove": "20.0.0-next.0",
+        "below": "20.3.22",
+        "severity": "medium",
+        "cwe": [
+          "CWE-79"
+        ],
+        "identifiers": {
+          "summary": "Angular: Template and Attribute Namespace Sanitization Bypass (XSS)",
+          "githubID": "GHSA-f3m7-gqxr-g87x",
+          "CVE": [
+            "CVE-2026-50557"
+          ]
+        },
+        "info": [
+          "https://github.com/angular/angular/security/advisories/GHSA-f3m7-gqxr-g87x",
+          "https://github.com/angular/angular/pull/68689",
+          "https://github.com/angular/angular/pull/68868"
+        ]
+      },
+      {
+        "atOrAbove": "20.0.0-next.0",
+        "below": "20.3.25",
+        "severity": "high",
+        "cwe": [
+          "CWE-79",
+          "CWE-471"
+        ],
+        "identifiers": {
+          "summary": "Angular Client Hydration DOM Clobbering & Response-Cache Poisoning",
+          "githubID": "GHSA-rgjc-h3x7-9mwg",
+          "CVE": [
+            "CVE-2026-54267"
+          ]
+        },
+        "info": [
+          "https://github.com/angular/angular/security/advisories/GHSA-rgjc-h3x7-9mwg",
+          "https://github.com/angular/angular/pull/69064",
+          "https://github.com/angular/angular/commit/6bde84fa8e6a5770b54040fbbc9bf10d5d0386fa"
         ]
       },
       {
@@ -3990,6 +4176,107 @@
         ]
       },
       {
+        "atOrAbove": "21.0.0-next.0",
+        "below": "21.2.15",
+        "severity": "medium",
+        "cwe": [
+          "CWE-79"
+        ],
+        "identifiers": {
+          "summary": "@angular/core: Angular Template and Dynamic Component Namespace Bypass leading to Cross-Site Scripting (XSS)",
+          "githubID": "GHSA-692r-grfm-v8x7",
+          "CVE": [
+            "CVE-2026-52725"
+          ]
+        },
+        "info": [
+          "https://github.com/angular/angular/security/advisories/GHSA-692r-grfm-v8x7",
+          "https://github.com/angular/angular/pull/68686",
+          "https://github.com/angular/angular/pull/68713"
+        ]
+      },
+      {
+        "atOrAbove": "21.0.0-next.0",
+        "below": "21.2.15",
+        "severity": "medium",
+        "cwe": [
+          "CWE-79"
+        ],
+        "identifiers": {
+          "summary": "Angular: Template and Attribute Namespace Sanitization Bypass (XSS)",
+          "githubID": "GHSA-f3m7-gqxr-g87x",
+          "CVE": [
+            "CVE-2026-50557"
+          ]
+        },
+        "info": [
+          "https://github.com/angular/angular/security/advisories/GHSA-f3m7-gqxr-g87x",
+          "https://github.com/angular/angular/pull/68689",
+          "https://github.com/angular/angular/pull/68868"
+        ]
+      },
+      {
+        "atOrAbove": "21.0.0-next.0",
+        "below": "21.2.17",
+        "severity": "high",
+        "cwe": [
+          "CWE-79",
+          "CWE-471"
+        ],
+        "identifiers": {
+          "summary": "Angular Client Hydration DOM Clobbering & Response-Cache Poisoning",
+          "githubID": "GHSA-rgjc-h3x7-9mwg",
+          "CVE": [
+            "CVE-2026-54267"
+          ]
+        },
+        "info": [
+          "https://github.com/angular/angular/security/advisories/GHSA-rgjc-h3x7-9mwg",
+          "https://github.com/angular/angular/pull/69064",
+          "https://github.com/angular/angular/commit/6bde84fa8e6a5770b54040fbbc9bf10d5d0386fa"
+        ]
+      },
+      {
+        "atOrAbove": "22.0.0-next.0",
+        "below": "22.0.0-rc.2",
+        "severity": "medium",
+        "cwe": [
+          "CWE-79"
+        ],
+        "identifiers": {
+          "summary": "@angular/core: Angular Template and Dynamic Component Namespace Bypass leading to Cross-Site Scripting (XSS)",
+          "githubID": "GHSA-692r-grfm-v8x7",
+          "CVE": [
+            "CVE-2026-52725"
+          ]
+        },
+        "info": [
+          "https://github.com/angular/angular/security/advisories/GHSA-692r-grfm-v8x7",
+          "https://github.com/angular/angular/pull/68686",
+          "https://github.com/angular/angular/pull/68713"
+        ]
+      },
+      {
+        "atOrAbove": "22.0.0-next.0",
+        "below": "22.0.0-rc.2",
+        "severity": "medium",
+        "cwe": [
+          "CWE-79"
+        ],
+        "identifiers": {
+          "summary": "Angular: Template and Attribute Namespace Sanitization Bypass (XSS)",
+          "githubID": "GHSA-f3m7-gqxr-g87x",
+          "CVE": [
+            "CVE-2026-50557"
+          ]
+        },
+        "info": [
+          "https://github.com/angular/angular/security/advisories/GHSA-f3m7-gqxr-g87x",
+          "https://github.com/angular/angular/pull/68689",
+          "https://github.com/angular/angular/pull/68868"
+        ]
+      },
+      {
         "atOrAbove": "22.0.0-next.0",
         "below": "22.0.0-next.3",
         "severity": "high",
@@ -4012,6 +4299,27 @@
           "https://github.com/angular/angular/commit/8630319f74c9575a21693d875cc7d5252516146d",
           "https://github.com/angular/angular/commit/ed2d324f9cc12aab6cfa0569ef10b73243a62c65"
         ]
+      },
+      {
+        "atOrAbove": "22.0.0-next.0",
+        "below": "22.0.1",
+        "severity": "high",
+        "cwe": [
+          "CWE-79",
+          "CWE-471"
+        ],
+        "identifiers": {
+          "summary": "Angular Client Hydration DOM Clobbering & Response-Cache Poisoning",
+          "githubID": "GHSA-rgjc-h3x7-9mwg",
+          "CVE": [
+            "CVE-2026-54267"
+          ]
+        },
+        "info": [
+          "https://github.com/angular/angular/security/advisories/GHSA-rgjc-h3x7-9mwg",
+          "https://github.com/angular/angular/pull/69064",
+          "https://github.com/angular/angular/commit/6bde84fa8e6a5770b54040fbbc9bf10d5d0386fa"
+        ]
       }
     ],
     "extractors": {
@@ -4019,10 +4327,18 @@
         "document.querySelector('[ng-version]').getAttribute('ng-version')",
         "window.getAllAngularRootElements()[0].getAttribute(['ng-version'])"
       ],
+      "filecontent": [
+        "/\\*\\*[\\s*]+@license Angular v(§§version§§)",
+        "\\[['\"]ng-version['\"],['\"](§§version§§)['\"]\\]"
+      ],
+      "uri": [
+        "@angular/core@(§§version§§)/"
+      ],
       "ast": [
-        "//ExportNamedDeclaration[       /ExportSpecifier/:exported[         /:name == \"NgModuleFactory\" ||          /:name == \"ɵBrowserDomAdapter\"       ]     ]/ExportSpecifier[       /:exported/:name == \"VERSION\"     ]/:$local/:init/:arguments/:value",
+        "//ExportNamedDeclaration[       /ExportSpecifier/:exported[         /:name == \"NgModuleFactory\" ||         /:name == \"ɵBrowserDomAdapter\" ||         /:name == \"XSS_SECURITY_URL\" ||         /:name == \"ZONELESS_ENABLED\"       ]     ]/ExportSpecifier[       /:exported/:name == \"VERSION\"     ]/:$local/:init/:arguments/:value",
         "//CallExpression/ArrayExpression[/Literal/:value == \"ng-version\"]/MemberExpression[       /:property/:name == \"full\"     ]/:$object/:init/:arguments/:value",
-        "//CallExpression/ArrayExpression[/Literal/:value == \"ng-version\"]/:1/:value"
+        "//CallExpression/ArrayExpression[/Literal/:value == \"ng-version\"]/:1/:value",
+        "//CallExpression[/Literal/:value == \"ng-version\"]/MemberExpression[       /:property/:name == \"full\"     ]/:$object/:init/:arguments/:value"
       ]
     }
   },
@@ -5529,6 +5845,142 @@
         },
         "info": [
           "https://github.com/cure53/DOMPurify/security/advisories/GHSA-87xg-pxx2-7hvx"
+        ]
+      },
+      {
+        "atOrAbove": "0",
+        "below": "3.4.6",
+        "severity": "medium",
+        "cwe": [
+          "CWE-79",
+          "CWE-501",
+          "CWE-693"
+        ],
+        "identifiers": {
+          "summary": "DOMPurify: Cross-realm IN_PLACE sanitization leaves executable markup intact via realm-bound `instanceof` checks",
+          "githubID": "GHSA-hpcv-96wg-7vj8",
+          "CVE": [
+            "CVE-2026-49458"
+          ]
+        },
+        "info": [
+          "https://github.com/cure53/DOMPurify/security/advisories/GHSA-hpcv-96wg-7vj8"
+        ]
+      },
+      {
+        "atOrAbove": "0",
+        "below": "3.4.6",
+        "severity": "medium",
+        "cwe": [
+          "CWE-79",
+          "CWE-693",
+          "CWE-1321"
+        ],
+        "identifiers": {
+          "summary": "DOMPurify: IN_PLACE mode preserves attributes of a clobbered root element, allowing XSS via attacker-controlled root DOM",
+          "githubID": "GHSA-r47g-fvhr-h676",
+          "CVE": [
+            "CVE-2026-49459"
+          ]
+        },
+        "info": [
+          "https://github.com/cure53/DOMPurify/security/advisories/GHSA-r47g-fvhr-h676"
+        ]
+      },
+      {
+        "atOrAbove": "0",
+        "below": "3.4.7",
+        "severity": "medium",
+        "cwe": [
+          "CWE-501",
+          "CWE-693"
+        ],
+        "identifiers": {
+          "summary": "DOMPurify: Hook mutation of `data.allowedTags` / `data.allowedAttributes` permanently pollutes `DEFAULT_ALLOWED_TAGS` / `DEFAULT_ALLOWED_ATTR`",
+          "githubID": "GHSA-76mc-f452-cxcm"
+        },
+        "info": [
+          "https://github.com/cure53/DOMPurify/security/advisories/GHSA-76mc-f452-cxcm"
+        ]
+      },
+      {
+        "atOrAbove": "0",
+        "below": "3.4.7",
+        "severity": "medium",
+        "cwe": [
+          "CWE-79"
+        ],
+        "identifiers": {
+          "summary": "DOMPurify IN_PLACE Sanitization Bypass via Attached Shadow Root Inside <template>.content",
+          "githubID": "GHSA-rp9w-3fw7-7cwq",
+          "CVE": [
+            "CVE-2026-49978"
+          ]
+        },
+        "info": [
+          "https://github.com/cure53/DOMPurify/security/advisories/GHSA-rp9w-3fw7-7cwq"
+        ]
+      },
+      {
+        "atOrAbove": "0",
+        "below": "3.4.7",
+        "severity": "low",
+        "cwe": [
+          "CWE-79"
+        ],
+        "identifiers": {
+          "summary": "DOMPurify: `IN_PLACE` mode trusts attacker-controlled `nodeName` on live non-form nodes, allowing script retention and XSS via attacker-supplied DOM objects",
+          "githubID": "GHSA-x4vx-rjvf-j5p4"
+        },
+        "info": [
+          "https://github.com/cure53/DOMPurify/security/advisories/GHSA-x4vx-rjvf-j5p4"
+        ]
+      },
+      {
+        "atOrAbove": "3.0.0",
+        "below": "3.4.8",
+        "severity": "low",
+        "cwe": [
+          "CWE-79"
+        ],
+        "identifiers": {
+          "summary": "DOMPurify: SAFE_FOR_TEMPLATES bypass - template expressions survive sanitization inside <template> content when using DOM output modes",
+          "githubID": "GHSA-gvmj-g25r-r7wr"
+        },
+        "info": [
+          "https://github.com/cure53/DOMPurify/security/advisories/GHSA-gvmj-g25r-r7wr"
+        ]
+      },
+      {
+        "atOrAbove": "0",
+        "below": "3.4.9",
+        "severity": "low",
+        "cwe": [
+          "CWE-693"
+        ],
+        "identifiers": {
+          "summary": "DOMPurify: Trusted Types policy survives `clearConfig()` and can poison later `RETURN_TRUSTED_TYPE` output",
+          "githubID": "GHSA-vxr8-fq34-vvx9"
+        },
+        "info": [
+          "https://github.com/cure53/DOMPurify/security/advisories/GHSA-vxr8-fq34-vvx9"
+        ]
+      },
+      {
+        "atOrAbove": "0",
+        "below": "3.4.11",
+        "severity": "medium",
+        "cwe": [
+          "CWE-471",
+          "CWE-665",
+          "CWE-79"
+        ],
+        "identifiers": {
+          "summary": "DOMPurify: Permanent `ALLOWED_ATTR` pollution via `setConfig()` bypassing the hook clone-guard (incomplete fix of the 3.4.7 hook-pollution patch)",
+          "githubID": "GHSA-cmwh-pvxp-8882"
+        },
+        "info": [
+          "https://github.com/cure53/DOMPurify/security/advisories/GHSA-cmwh-pvxp-8882"
         ]
       }
     ],
@@ -7915,6 +8367,7 @@
         "below": "0.32.0",
         "severity": "high",
         "cwe": [
+          "CWE-289",
           "CWE-918"
         ],
         "identifiers": {
@@ -8491,24 +8944,6 @@
         ]
       },
       {
-        "atOrAbove": "1.0.0",
-        "below": "1.16.0",
-        "severity": "high",
-        "cwe": [
-          "CWE-918"
-        ],
-        "identifiers": {
-          "summary": "The shouldBypassProxy function introduced in Axios 1.15.0 does not normalize IPv4-mapped IPv6 addresses, allowing bypass of NO_PROXY exclusions when requests use IPv4-mapped IPv6 notation to target excluded IPv4 addresses.",
-          "githubID": "GHSA-pjwm-pj3p-43mv",
-          "CVE": [
-            "CVE-2026-44492"
-          ]
-        },
-        "info": [
-          "https://github.com/axios/axios/security/advisories/GHSA-pjwm-pj3p-43mv"
-        ]
-      },
-      {
         "atOrAbove": "1.7.0",
         "below": "1.16.0",
         "severity": "high",
@@ -8527,6 +8962,25 @@
           "https://github.com/axios/axios/pull/10795",
           "https://github.com/axios/axios/pull/10796",
           "https://github.com/axios/axios/releases/tag/v1.16.0"
+        ]
+      },
+      {
+        "atOrAbove": "1.15.0",
+        "below": "1.16.0",
+        "severity": "high",
+        "cwe": [
+          "CWE-289",
+          "CWE-918"
+        ],
+        "identifiers": {
+          "summary": "The shouldBypassProxy function introduced in Axios 1.15.0 does not normalize IPv4-mapped IPv6 addresses, allowing bypass of NO_PROXY exclusions when requests use IPv4-mapped IPv6 notation to target excluded IPv4 addresses.",
+          "githubID": "GHSA-pjwm-pj3p-43mv",
+          "CVE": [
+            "CVE-2026-44492"
+          ]
+        },
+        "info": [
+          "https://github.com/axios/axios/security/advisories/GHSA-pjwm-pj3p-43mv"
         ]
       },
       {
@@ -8697,6 +9151,25 @@
           "https://gist.github.com/ltduc147/c9abecae1b291ede4f692f2ab988c917",
           "https://github.com/markdown-it/markdown-it/blob/14.1.0/lib/rules_inline/linkify.mjs#L33",
           "https://security.snyk.io/vuln/SNYK-JS-MARKDOWNIT-10666750"
+        ]
+      },
+      {
+        "atOrAbove": "0",
+        "below": "14.2.0",
+        "severity": "medium",
+        "cwe": [
+          "CWE-400",
+          "CWE-407"
+        ],
+        "identifiers": {
+          "summary": "markdown-it: Quadratic complexity DoS in smartquotes rule via replaceAt string operations",
+          "githubID": "GHSA-6v5v-wf23-fmfq",
+          "CVE": [
+            "CVE-2026-48988"
+          ]
+        },
+        "info": [
+          "https://github.com/markdown-it/markdown-it/security/advisories/GHSA-6v5v-wf23-fmfq"
         ]
       }
     ],
@@ -12385,7 +12858,8 @@
         "identifiers": {
           "summary": "Command Injection in lodash",
           "CVE": [
-            "CVE-2021-23337"
+            "CVE-2021-23337",
+            "CVE-2026-4800"
           ],
           "githubID": "GHSA-35jh-r3h4-6jhm"
         },
@@ -12458,7 +12932,8 @@
           "summary": "Lodash versions 4.0.0 through 4.17.22 are vulnerable to prototype pollution via the _.unset and _.omit functions. An attacker can pass crafted paths to delete methods from global prototypes such as Object.prototype, though the issue only permits deletion and not overwriting of properties.",
           "githubID": "GHSA-xxjr-mmjv-4gpg",
           "CVE": [
-            "CVE-2025-13465"
+            "CVE-2025-13465",
+            "CVE-2026-2950"
           ]
         },
         "info": [
@@ -12477,6 +12952,7 @@
           "summary": "Lodash 4.17.23 and earlier are vulnerable to a prototype pollution bypass in _.unset and _.omit. The fix for CVE-2025-13465 only guards against string key members, so attackers can bypass it by passing array-wrapped path segments to delete properties from built-in prototypes including Object.prototype, Number.prototype, and String.prototype.",
           "githubID": "GHSA-f23m-r3pf-42rh",
           "CVE": [
+            "CVE-2025-13465",
             "CVE-2026-2950"
           ]
         },
@@ -12496,6 +12972,7 @@
           "summary": "Lodash _.template is vulnerable to code injection via unsanitized options.imports key names. Untrusted key names are passed to the Function() constructor sink without validation, and the use of assignInWith (which enumerates inherited properties) also means that pre-existing prototype pollution on Object.prototype can flow into the Function() sink and execute arbitrary code at template compilation time.",
           "githubID": "GHSA-r5fr-rjxr-66jc",
           "CVE": [
+            "CVE-2021-23337",
             "CVE-2026-4800"
           ]
         },
@@ -12625,7 +13102,7 @@
         "atOrAbove": "0.7.29",
         "below": "0.7.30",
         "cwe": [
-          "CWE-829",
+          "CWE-506",
           "CWE-912"
         ],
         "severity": "high",
@@ -12672,7 +13149,7 @@
         "atOrAbove": "0.8.0",
         "below": "0.8.1",
         "cwe": [
-          "CWE-829",
+          "CWE-506",
           "CWE-912"
         ],
         "severity": "high",
@@ -12695,7 +13172,7 @@
         "atOrAbove": "1.0.0",
         "below": "1.0.1",
         "cwe": [
-          "CWE-829",
+          "CWE-506",
           "CWE-912"
         ],
         "severity": "high",
@@ -12736,6 +13213,25 @@
           "https://github.com/faisalman/ua-parser-js/commit/a6140a17dd0300a35cfc9cff999545f267889411",
           "https://github.com/faisalman/ua-parser-js",
           "https://security.snyk.io/vuln/SNYK-JS-UAPARSERJS-3244450"
+        ]
+      },
+      {
+        "atOrAbove": "2.0.1",
+        "below": "2.0.10",
+        "severity": "medium",
+        "cwe": [
+          "CWE-1333",
+          "CWE-400"
+        ],
+        "identifiers": {
+          "summary": "UAParser.js: Unbounded `Sec-CH-UA-Model` parsing can trigger ReDoS in `withClientHints()`",
+          "githubID": "GHSA-9h5v-pfqq-x599",
+          "CVE": [
+            "CVE-2026-48125"
+          ]
+        },
+        "info": [
+          "https://github.com/faisalman/ua-parser-js/security/advisories/GHSA-9h5v-pfqq-x599"
         ]
       }
     ],
@@ -13396,7 +13892,31 @@
     "licenses": [
       "Apache-2.0 >=0"
     ],
-    "vulnerabilities": [],
+    "vulnerabilities": [
+      {
+        "atOrAbove": "0",
+        "below": "6.1.0",
+        "severity": "medium",
+        "cwe": [
+          "CWE-79"
+        ],
+        "identifiers": {
+          "summary": "Apache ECharts has a cross-site scripting (XSS) vulnerability",
+          "githubID": "GHSA-fgmj-fm8m-jvvx",
+          "CVE": [
+            "CVE-2026-45249"
+          ]
+        },
+        "info": [
+          "https://github.com/apache/echarts/pull/21608",
+          "https://github.com/apache/echarts/commit/1e39b00eedda0e4a0b048e099c0e13ce7149d90f",
+          "https://echarts.apache.org/en/option.html#series-lines",
+          "https://echarts.apache.org/handbook/en/best-practices/security/#passing_raw_html_safely",
+          "https://lists.apache.org/thread/1g6xk7gd9vg1c6zyqqt2lnko10zomc3o",
+          "http://www.openwall.com/lists/oss-security/2026/05/23/4"
+        ]
+      }
+    ],
     "extractors": {
       "uri": [
         "/echarts[@/](§§version§§)/"
@@ -14062,6 +14582,43 @@
         ]
       },
       {
+        "atOrAbove": "0",
+        "below": "7.6.1",
+        "severity": "high",
+        "cwe": [
+          "CWE-674"
+        ],
+        "identifiers": {
+          "summary": "protobufjs: Denial of service through unbounded Any expansion during JSON conversion",
+          "githubID": "GHSA-wcpc-wj8m-hjx6",
+          "CVE": [
+            "CVE-2026-48712"
+          ]
+        },
+        "info": [
+          "https://github.com/protobufjs/protobuf.js/security/advisories/GHSA-wcpc-wj8m-hjx6"
+        ]
+      },
+      {
+        "atOrAbove": "0",
+        "below": "7.6.3",
+        "severity": "medium",
+        "cwe": [
+          "CWE-674",
+          "CWE-754"
+        ],
+        "identifiers": {
+          "summary": "protobufjs : Schema-derived names can shadow runtime-significant properties",
+          "githubID": "GHSA-f38q-mgvj-vph7",
+          "CVE": [
+            "CVE-2026-54269"
+          ]
+        },
+        "info": [
+          "https://github.com/protobufjs/protobuf.js/security/advisories/GHSA-f38q-mgvj-vph7"
+        ]
+      },
+      {
         "atOrAbove": "8.0.0",
         "below": "8.0.1",
         "severity": "critical",
@@ -14240,6 +14797,61 @@
         },
         "info": [
           "https://github.com/protobufjs/protobuf.js/security/advisories/GHSA-jggg-4jg4-v7c6"
+        ]
+      },
+      {
+        "atOrAbove": "8.0.0",
+        "below": "8.4.1",
+        "severity": "high",
+        "cwe": [
+          "CWE-674"
+        ],
+        "identifiers": {
+          "summary": "protobufjs: Denial of service through unbounded Any expansion during JSON conversion",
+          "githubID": "GHSA-wcpc-wj8m-hjx6",
+          "CVE": [
+            "CVE-2026-48712"
+          ]
+        },
+        "info": [
+          "https://github.com/protobufjs/protobuf.js/security/advisories/GHSA-wcpc-wj8m-hjx6"
+        ]
+      },
+      {
+        "atOrAbove": "8.2.0",
+        "below": "8.5.0",
+        "severity": "medium",
+        "cwe": [
+          "CWE-770"
+        ],
+        "identifiers": {
+          "summary": "protobufjs: Memory amplification from preserved unknown fields in binary decode",
+          "githubID": "GHSA-94rc-8x27-4472",
+          "CVE": [
+            "CVE-2026-54270"
+          ]
+        },
+        "info": [
+          "https://github.com/protobufjs/protobuf.js/security/advisories/GHSA-94rc-8x27-4472"
+        ]
+      },
+      {
+        "atOrAbove": "8.0.0",
+        "below": "8.6.0",
+        "severity": "medium",
+        "cwe": [
+          "CWE-674",
+          "CWE-754"
+        ],
+        "identifiers": {
+          "summary": "protobufjs : Schema-derived names can shadow runtime-significant properties",
+          "githubID": "GHSA-f38q-mgvj-vph7",
+          "CVE": [
+            "CVE-2026-54269"
+          ]
+        },
+        "info": [
+          "https://github.com/protobufjs/protobuf.js/security/advisories/GHSA-f38q-mgvj-vph7"
         ]
       }
     ],
