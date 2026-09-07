@@ -4421,6 +4421,10 @@
         "Clickadu": {
           "https://clickadu.com/": [
             "bncloudfl.com",
+            "campfirecroutondecorator.com",
+            "deductgreedyheadroom.com",
+            "demandingoverdriveunthread.com",
+            "earmuffpostnasalrisotto.com",
             "pecantinglytripod.com"
           ]
         }
@@ -4566,6 +4570,13 @@
         "CommandersAct": {
           "https://www.commandersact.com/en/": [
             "commander1.com"
+          ]
+        }
+      },
+      {
+        "Communify": {
+          "https://communify.com/": [
+            "ad.wsod.com"
           ]
         }
       },
@@ -5841,13 +5852,6 @@
         }
       },
       {
-        "Funraise": {
-          "https://funraise.org": [
-            "assets.funraise.io"
-          ]
-        }
-      },
-      {
         "fuseplatform.net": {
           "https://fuseplatform.net": [
             "fuseplatform.net"
@@ -6212,13 +6216,6 @@
         "HelloBar": {
           "https://hellobar.com": [
             "hellobar.com"
-          ]
-        }
-      },
-      {
-        "Hextom": {
-          "https://hextom.com": [
-            "hextom.com"
           ]
         }
       },
@@ -6836,6 +6833,13 @@
         }
       },
       {
+        "Janusaent": {
+          "https://janusaent.com/": [
+            "janusaent.com"
+          ]
+        }
+      },
+      {
         "Jaroop": {
           "http://www.jaroop.com/": [
             "jaroop.com"
@@ -6987,13 +6991,6 @@
         "Kimberlite.io": {
           "https://kimberlite.io": [
             "kimberlite.io"
-          ]
-        }
-      },
-      {
-        "Kit": {
-          "https://kit.com": [
-            "convertkit.com"
           ]
         }
       },
@@ -7409,6 +7406,13 @@
         "MambaSMS": {
           "https://mambasms.com": [
             "mambasms.com"
+          ]
+        }
+      },
+      {
+        "Manago AI": {
+          "https://manago.ai/": [
+            "salesmanago.com"
           ]
         }
       },
@@ -8394,15 +8398,26 @@
       },
       {
         "OpenWeb": {
-          "https://openweb.com": [
+          "https://openweb.com/": [
             "adyoulike.com",
             "api-ssp.spot.im",
             "direct-events-collector.spot.im",
+            "eventer-display-identity.bqstreamer.com",
+            "eventer-player.bqstreamer.com",
+            "eventer-upsdisplay.bqstreamer.com",
+            "eventer-widget.bqstreamer.com",
             "metrics-logger.spot.im",
+            "monti-config.bqstreamer.com",
+            "monti-version.bqstreamer.com",
             "omnitagjs.com",
             "pix.spot.im",
             "publisher-assets.spot.im",
-            "spotim.market"
+            "rtb-configuration.bqstreamer.com",
+            "spotim.market",
+            "uds-config.bqstreamer.com",
+            "uds-selector.bqstreamer.com",
+            "uid-creation.bqstreamer.com",
+            "ups-library.bqstreamer.com"
           ]
         }
       },
@@ -8432,9 +8447,9 @@
       },
       {
         "Opper": {
-          "https://opper.io": [
-            "ownpage.fr",
-            "qiota.com"
+          "https://opper.io/": [
+            "data.qiota.com",
+            "ownpage.fr"
           ]
         }
       },
@@ -8479,8 +8494,7 @@
       {
         "Optimizely": {
           "https://www.optimizely.com/": [
-            "episerver.net",
-            "optimizely.com"
+            "episerver.net"
           ]
         }
       },
@@ -8603,9 +8617,8 @@
       },
       {
         "Overwolf": {
-          "https://overwolf.com": [
-            "nitropay.com",
-            "tebex.io"
+          "https://overwolf.com/": [
+            "nitropay.com"
           ]
         }
       },
@@ -9645,13 +9658,6 @@
         "Salesintelligence": {
           "https://salesintelligence.pl/": [
             "plugin.management"
-          ]
-        }
-      },
-      {
-        "SALESmanago": {
-          "https://salesmanago.com": [
-            "salesmanago.com"
           ]
         }
       },
@@ -10750,6 +10756,13 @@
         }
       },
       {
+        "Trade House Media": {
+          "https://tradehouse.media/": [
+            "tradehouse.media"
+          ]
+        }
+      },
+      {
         "TradeTracker": {
           "http://www.tradetracker.com/": [
             "tradetracker.com",
@@ -10882,6 +10895,13 @@
         }
       },
       {
+        "Trustpielote": {
+          "https://trustpielote.com/": [
+            "trustpielote.com"
+          ]
+        }
+      },
+      {
         "TrustPilot": {
           "https://www.trustpilot.com": [
             "trustpilot.com"
@@ -10988,8 +11008,7 @@
         "Unbounce": {
           "https://unbounce.com": [
             "leadsrx.com",
-            "ubembed.com",
-            "unbounce.com"
+            "ubembed.com"
           ]
         }
       },
@@ -11855,13 +11874,6 @@
         }
       },
       {
-        "AfterPay": {
-          "https://afterpay.com": [
-            "afterpay.com"
-          ]
-        }
-      },
-      {
         "AirNav Radar": {
           "https://airnavradar.com": [
             "airnavradar.com"
@@ -11945,6 +11957,13 @@
         "BitMovin": {
           "https://bitmovin.com": [
             "bitmovin.com"
+          ]
+        }
+      },
+      {
+        "Block": {
+          "https://block.xyz/": [
+            "afterpay.com"
           ]
         }
       },
@@ -12070,6 +12089,13 @@
         "FundraiseUp": {
           "https://fundraiseup.com/": [
             "fundraiseup.com"
+          ]
+        }
+      },
+      {
+        "Funraise": {
+          "https://www.funraise.org/": [
+            "assets.funraise.io"
           ]
         }
       },
@@ -12309,6 +12335,20 @@
         }
       },
       {
+        "Gubagoo": {
+          "https://www.gubagoo.com/": [
+            "gubagoo.io"
+          ]
+        }
+      },
+      {
+        "Hextom": {
+          "https://hextom.com": [
+            "hextom.com"
+          ]
+        }
+      },
+      {
         "HotMart": {
           "https://www.hotmart.com/en/": [
             "hotmart.com"
@@ -12401,7 +12441,7 @@
       {
         "Kit": {
           "https://kit.com": [
-            "pages.convertkit.com"
+            "convertkit.com"
           ]
         }
       },
@@ -12523,8 +12563,22 @@
       },
       {
         "OpenWeb": {
-          "https://openweb.com": [
+          "https://openweb.com/": [
             "spot.im"
+          ]
+        }
+      },
+      {
+        "Opper": {
+          "https://opper.io/": [
+            "www.qiota.com"
+          ]
+        }
+      },
+      {
+        "Optimizely": {
+          "https://www.optimizely.com/": [
+            "optimizely.com"
           ]
         }
       },
@@ -12532,6 +12586,13 @@
         "Oracle": {
           "http://www.oracle.com/": [
             "oracle.com"
+          ]
+        }
+      },
+      {
+        "Overwolf": {
+          "https://overwolf.com/": [
+            "tebex.io"
           ]
         }
       },
@@ -12723,7 +12784,7 @@
       {
         "Unbounce": {
           "https://unbounce.com": [
-            "builder-assets.unbounce.com"
+            "unbounce.com"
           ]
         }
       },
@@ -13127,7 +13188,7 @@
       },
       {
         "Binance": {
-          "https://binance.com": [
+          "https://www.binance.com/": [
             "bnbstatic.com"
           ]
         }
@@ -13136,6 +13197,18 @@
         "Bitrix24": {
           "https://www.bitrix24.com/": [
             "bitrix.info"
+          ]
+        }
+      },
+      {
+        "Block": {
+          "https://block.xyz/": [
+            "cdn11.editmysite.com",
+            "cdn2.editmysite.com",
+            "cdn3.editmysite.com",
+            "cdn5.editmysite.com",
+            "cdn6.editmysite.com",
+            "ec.editmysite.com"
           ]
         }
       },
@@ -13295,6 +13368,13 @@
         }
       },
       {
+        "Clay": {
+          "https://clay.com/": [
+            "claydar.com"
+          ]
+        }
+      },
+      {
         "CleverTap": {
           "https://clevertap.com": [
             "clevertap-prod.com",
@@ -13328,6 +13408,14 @@
         "ClustrMaps": {
           "http://www.clustrmaps.com/": [
             "clustrmaps.com"
+          ]
+        }
+      },
+      {
+        "Cognition": {
+          "https://www.cognitionads.com/": [
+            "app.trialfire.com",
+            "cdn.trialfire.com"
           ]
         }
       },
@@ -13595,6 +13683,13 @@
         "edkt.io": {
           "https://edkt.io": [
             "edkt.io"
+          ]
+        }
+      },
+      {
+        "Edmunds": {
+          "https://www.edmunds.com/": [
+            "edw.edmunds.com"
           ]
         }
       },
@@ -14599,6 +14694,7 @@
       {
         "Optimizely": {
           "https://www.optimizely.com/": [
+            "logx.optimizely.com",
             "peerius.com"
           ]
         }
@@ -14779,6 +14875,13 @@
         }
       },
       {
+        "RebelMouse": {
+          "https://www.rebelmouse.com/": [
+            "rbl.ms"
+          ]
+        }
+      },
+      {
         "ReportGarden": {
           "https://reportgarden.com": [
             "gaug.es"
@@ -14948,10 +15051,9 @@
       },
       {
         "S&P Global": {
-          "https://spglobal.com": [
+          "https://spglobal.com/": [
             "collserve.com",
-            "dataium.com",
-            "wsod.com"
+            "dataium.com"
           ]
         }
       },
@@ -15742,13 +15844,6 @@
         }
       },
       {
-        "Alpine IQ": {
-          "https://aiq.com": [
-            "lab.alpineiq.com"
-          ]
-        }
-      },
-      {
         "Amazon": {
           "https://www.amazon.com/": [
             "4e7d2b3cdfc7.edge.sdk.awswaf.com",
@@ -16089,9 +16184,26 @@
         }
       },
       {
+        "Clay": {
+          "https://clay.com/": [
+            "claydar.com"
+          ]
+        }
+      },
+      {
         "ClearLink": {
           "https://www.clearlink.com/": [
             "clearlink.com"
+          ]
+        }
+      },
+      {
+        "Clickadu": {
+          "https://clickadu.com/": [
+            "campfirecroutondecorator.com",
+            "deductgreedyheadroom.com",
+            "demandingoverdriveunthread.com",
+            "earmuffpostnasalrisotto.com"
           ]
         }
       },
@@ -16547,6 +16659,13 @@
         }
       },
       {
+        "Janusaent": {
+          "https://janusaent.com/": [
+            "janusaent.com"
+          ]
+        }
+      },
+      {
         "Jennydanny.com": {
           "https://jennydanny.com": [
             "news.jennydanny.com"
@@ -16838,6 +16957,13 @@
         }
       },
       {
+        "OpenWeb": {
+          "https://openweb.com/": [
+            "monti-config.bqstreamer.com"
+          ]
+        }
+      },
+      {
         "opin.media": {
           "https://opin.media": [
             "jssdk.opin.media"
@@ -16853,8 +16979,7 @@
       },
       {
         "Overwolf": {
-          "https://overwolf.com": [
-            "nsure.tebex.io",
+          "https://overwolf.com/": [
             "s.nitropay.com"
           ]
         }
@@ -16989,13 +17114,6 @@
         "rxayc.com": {
           "https://rxayc.com": [
             "rxayc.com"
-          ]
-        }
-      },
-      {
-        "SALESmanago": {
-          "https://salesmanago.com": [
-            "salesmanago.com"
           ]
         }
       },
@@ -18053,8 +18171,8 @@
       },
       {
         "Opper": {
-          "https://opper.io": [
-            "qiota.com"
+          "https://opper.io/": [
+            "static.qiota.com"
           ]
         }
       },
