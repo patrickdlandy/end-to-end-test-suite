@@ -1874,6 +1874,13 @@
         }
       },
       {
+        "Adipolo": {
+          "https://adipolo.com/": [
+            "adipolo.live"
+          ]
+        }
+      },
+      {
         "Aditude": {
           "https://aditude.com": [
             "cpmstar.com",
@@ -3305,6 +3312,13 @@
         }
       },
       {
+        "Apostra": {
+          "https://apostra.com/": [
+            "scope3.com"
+          ]
+        }
+      },
+      {
         "AppCast": {
           "https://appcast.io/": [
             "appcast.io"
@@ -4421,6 +4435,10 @@
         "Clickadu": {
           "https://clickadu.com/": [
             "bncloudfl.com",
+            "campfirecroutondecorator.com",
+            "deductgreedyheadroom.com",
+            "demandingoverdriveunthread.com",
+            "earmuffpostnasalrisotto.com",
             "pecantinglytripod.com"
           ]
         }
@@ -4566,6 +4584,13 @@
         "CommandersAct": {
           "https://www.commandersact.com/en/": [
             "commander1.com"
+          ]
+        }
+      },
+      {
+        "Communify": {
+          "https://communify.com/": [
+            "ad.wsod.com"
           ]
         }
       },
@@ -5841,13 +5866,6 @@
         }
       },
       {
-        "Funraise": {
-          "https://funraise.org": [
-            "assets.funraise.io"
-          ]
-        }
-      },
-      {
         "fuseplatform.net": {
           "https://fuseplatform.net": [
             "fuseplatform.net"
@@ -6142,7 +6160,8 @@
       },
       {
         "GumGum": {
-          "http://gumgum.com/": [
+          "https://gumgum.com/": [
+            "attentionxyz.com",
             "gumgum.com",
             "justpremium.com",
             "playground.xyz"
@@ -6179,14 +6198,6 @@
         }
       },
       {
-        "Hatena": {
-          "https://hatena.co.jp": [
-            "hatena.ne.jp",
-            "st-hatena.com"
-          ]
-        }
-      },
-      {
         "HB Agency": {
           "https://hbagency.it": [
             "hbagency.it"
@@ -6212,13 +6223,6 @@
         "HelloBar": {
           "https://hellobar.com": [
             "hellobar.com"
-          ]
-        }
-      },
-      {
-        "Hextom": {
-          "https://hextom.com": [
-            "hextom.com"
           ]
         }
       },
@@ -6836,6 +6840,13 @@
         }
       },
       {
+        "Janusaent": {
+          "https://janusaent.com/": [
+            "janusaent.com"
+          ]
+        }
+      },
+      {
         "Jaroop": {
           "http://www.jaroop.com/": [
             "jaroop.com"
@@ -6991,13 +7002,6 @@
         }
       },
       {
-        "Kit": {
-          "https://kit.com": [
-            "convertkit.com"
-          ]
-        }
-      },
-      {
         "Kitara Media": {
           "http://www.kitaramedia.com/": [
             "103092804.com"
@@ -7041,8 +7045,9 @@
       },
       {
         "Kochava": {
-          "https://kochava.com": [
-            "kochava.com"
+          "https://www.kochava.com/": [
+            "kochava.com",
+            "smart.link"
           ]
         }
       },
@@ -7409,6 +7414,13 @@
         "MambaSMS": {
           "https://mambasms.com": [
             "mambasms.com"
+          ]
+        }
+      },
+      {
+        "Manago AI": {
+          "https://manago.ai/": [
+            "salesmanago.com"
           ]
         }
       },
@@ -8394,15 +8406,26 @@
       },
       {
         "OpenWeb": {
-          "https://openweb.com": [
+          "https://openweb.com/": [
             "adyoulike.com",
             "api-ssp.spot.im",
             "direct-events-collector.spot.im",
+            "eventer-display-identity.bqstreamer.com",
+            "eventer-player.bqstreamer.com",
+            "eventer-upsdisplay.bqstreamer.com",
+            "eventer-widget.bqstreamer.com",
             "metrics-logger.spot.im",
+            "monti-config.bqstreamer.com",
+            "monti-version.bqstreamer.com",
             "omnitagjs.com",
             "pix.spot.im",
             "publisher-assets.spot.im",
-            "spotim.market"
+            "rtb-configuration.bqstreamer.com",
+            "spotim.market",
+            "uds-config.bqstreamer.com",
+            "uds-selector.bqstreamer.com",
+            "uid-creation.bqstreamer.com",
+            "ups-library.bqstreamer.com"
           ]
         }
       },
@@ -8432,9 +8455,9 @@
       },
       {
         "Opper": {
-          "https://opper.io": [
-            "ownpage.fr",
-            "qiota.com"
+          "https://opper.io/": [
+            "data.qiota.com",
+            "ownpage.fr"
           ]
         }
       },
@@ -8463,9 +8486,10 @@
         }
       },
       {
-        "optidigital": {
-          "https://www.optidigital.com/": [
-            "opti-digital.com"
+        "OptiDigital": {
+          "https://optidigital.com/": [
+            "opti-digital.com",
+            "optidigital.com"
           ]
         }
       },
@@ -8479,8 +8503,7 @@
       {
         "Optimizely": {
           "https://www.optimizely.com/": [
-            "episerver.net",
-            "optimizely.com"
+            "episerver.net"
           ]
         }
       },
@@ -8603,9 +8626,8 @@
       },
       {
         "Overwolf": {
-          "https://overwolf.com": [
-            "nitropay.com",
-            "tebex.io"
+          "https://overwolf.com/": [
+            "nitropay.com"
           ]
         }
       },
@@ -9649,13 +9671,6 @@
         }
       },
       {
-        "SALESmanago": {
-          "https://salesmanago.com": [
-            "salesmanago.com"
-          ]
-        }
-      },
-      {
         "Samba.tv": {
           "https://samba.tv": [
             "samba.tv"
@@ -10002,13 +10017,6 @@
         "SMI2": {
           "https://smi2.ru/": [
             "smi2.ru"
-          ]
-        }
-      },
-      {
-        "Smile": {
-          "https://smile.io": [
-            "smile.io"
           ]
         }
       },
@@ -10750,6 +10758,13 @@
         }
       },
       {
+        "Trade House Media": {
+          "https://tradehouse.media/": [
+            "tradehouse.media"
+          ]
+        }
+      },
+      {
         "TradeTracker": {
           "http://www.tradetracker.com/": [
             "tradetracker.com",
@@ -10882,6 +10897,13 @@
         }
       },
       {
+        "Trustpielote": {
+          "https://trustpielote.com/": [
+            "trustpielote.com"
+          ]
+        }
+      },
+      {
         "TrustPilot": {
           "https://www.trustpilot.com": [
             "trustpilot.com"
@@ -10988,8 +11010,7 @@
         "Unbounce": {
           "https://unbounce.com": [
             "leadsrx.com",
-            "ubembed.com",
-            "unbounce.com"
+            "ubembed.com"
           ]
         }
       },
@@ -11102,6 +11123,14 @@
         "UTarget": {
           "https://utarget.pro/": [
             "utarget.ru"
+          ]
+        }
+      },
+      {
+        "Utiq": {
+          "https://utiq.com": [
+            "utiq-aws.net",
+            "utiqcontent.com"
           ]
         }
       },
@@ -11352,6 +11381,13 @@
         "Vitec Software Group": {
           "https://vitecsoftware.com": [
             "bidtheatre.com"
+          ]
+        }
+      },
+      {
+        "vlcapi.net": {
+          "https://vlcapi.net/": [
+            "vlcapi.net"
           ]
         }
       },
@@ -11855,13 +11891,6 @@
         }
       },
       {
-        "AfterPay": {
-          "https://afterpay.com": [
-            "afterpay.com"
-          ]
-        }
-      },
-      {
         "AirNav Radar": {
           "https://airnavradar.com": [
             "airnavradar.com"
@@ -11945,6 +11974,13 @@
         "BitMovin": {
           "https://bitmovin.com": [
             "bitmovin.com"
+          ]
+        }
+      },
+      {
+        "Block": {
+          "https://block.xyz/": [
+            "afterpay.com"
           ]
         }
       },
@@ -12070,6 +12106,13 @@
         "FundraiseUp": {
           "https://fundraiseup.com/": [
             "fundraiseup.com"
+          ]
+        }
+      },
+      {
+        "Funraise": {
+          "https://www.funraise.org/": [
+            "assets.funraise.io"
           ]
         }
       },
@@ -12309,6 +12352,28 @@
         }
       },
       {
+        "Gubagoo": {
+          "https://www.gubagoo.com/": [
+            "gubagoo.io"
+          ]
+        }
+      },
+      {
+        "Hatena": {
+          "https://hatena.co.jp": [
+            "hatena.ne.jp",
+            "st-hatena.com"
+          ]
+        }
+      },
+      {
+        "Hextom": {
+          "https://hextom.com": [
+            "hextom.com"
+          ]
+        }
+      },
+      {
         "HotMart": {
           "https://www.hotmart.com/en/": [
             "hotmart.com"
@@ -12355,7 +12420,7 @@
       {
         "ipify": {
           "https://www.ipify.org": [
-            "api.ipify.org"
+            "ipify.org"
           ]
         }
       },
@@ -12401,7 +12466,7 @@
       {
         "Kit": {
           "https://kit.com": [
-            "pages.convertkit.com"
+            "convertkit.com"
           ]
         }
       },
@@ -12523,8 +12588,22 @@
       },
       {
         "OpenWeb": {
-          "https://openweb.com": [
+          "https://openweb.com/": [
             "spot.im"
+          ]
+        }
+      },
+      {
+        "Opper": {
+          "https://opper.io/": [
+            "www.qiota.com"
+          ]
+        }
+      },
+      {
+        "Optimizely": {
+          "https://www.optimizely.com/": [
+            "optimizely.com"
           ]
         }
       },
@@ -12532,6 +12611,13 @@
         "Oracle": {
           "http://www.oracle.com/": [
             "oracle.com"
+          ]
+        }
+      },
+      {
+        "Overwolf": {
+          "https://overwolf.com/": [
+            "tebex.io"
           ]
         }
       },
@@ -12636,6 +12722,13 @@
         }
       },
       {
+        "Smile": {
+          "https://smile.io": [
+            "smile.io"
+          ]
+        }
+      },
+      {
         "Spotify": {
           "https://www.spotify.com": [
             "pdst.fm"
@@ -12723,7 +12816,7 @@
       {
         "Unbounce": {
           "https://unbounce.com": [
-            "builder-assets.unbounce.com"
+            "unbounce.com"
           ]
         }
       },
@@ -13127,7 +13220,7 @@
       },
       {
         "Binance": {
-          "https://binance.com": [
+          "https://www.binance.com/": [
             "bnbstatic.com"
           ]
         }
@@ -13136,6 +13229,18 @@
         "Bitrix24": {
           "https://www.bitrix24.com/": [
             "bitrix.info"
+          ]
+        }
+      },
+      {
+        "Block": {
+          "https://block.xyz/": [
+            "cdn11.editmysite.com",
+            "cdn2.editmysite.com",
+            "cdn3.editmysite.com",
+            "cdn5.editmysite.com",
+            "cdn6.editmysite.com",
+            "ec.editmysite.com"
           ]
         }
       },
@@ -13295,6 +13400,13 @@
         }
       },
       {
+        "Clay": {
+          "https://clay.com/": [
+            "claydar.com"
+          ]
+        }
+      },
+      {
         "CleverTap": {
           "https://clevertap.com": [
             "clevertap-prod.com",
@@ -13328,6 +13440,14 @@
         "ClustrMaps": {
           "http://www.clustrmaps.com/": [
             "clustrmaps.com"
+          ]
+        }
+      },
+      {
+        "Cognition": {
+          "https://www.cognitionads.com/": [
+            "app.trialfire.com",
+            "cdn.trialfire.com"
           ]
         }
       },
@@ -13595,6 +13715,13 @@
         "edkt.io": {
           "https://edkt.io": [
             "edkt.io"
+          ]
+        }
+      },
+      {
+        "Edmunds": {
+          "https://www.edmunds.com/": [
+            "edw.edmunds.com"
           ]
         }
       },
@@ -14047,13 +14174,6 @@
         }
       },
       {
-        "ipify": {
-          "https://www.ipify.org": [
-            "ipify.org"
-          ]
-        }
-      },
-      {
         "IPQualityScore": {
           "https://ipqualityscore.com": [
             "ipqualityscore.com"
@@ -14197,6 +14317,13 @@
         "m2911p.com": {
           "https://m2911p.com": [
             "m2911p.com"
+          ]
+        }
+      },
+      {
+        "MA Aporia LTD": {
+          "https://serviceclic.com/": [
+            "serviceclic.com"
           ]
         }
       },
@@ -14599,6 +14726,7 @@
       {
         "Optimizely": {
           "https://www.optimizely.com/": [
+            "logx.optimizely.com",
             "peerius.com"
           ]
         }
@@ -14779,6 +14907,13 @@
         }
       },
       {
+        "RebelMouse": {
+          "https://www.rebelmouse.com/": [
+            "rbl.ms"
+          ]
+        }
+      },
+      {
         "ReportGarden": {
           "https://reportgarden.com": [
             "gaug.es"
@@ -14948,10 +15083,9 @@
       },
       {
         "S&P Global": {
-          "https://spglobal.com": [
+          "https://spglobal.com/": [
             "collserve.com",
-            "dataium.com",
-            "wsod.com"
+            "dataium.com"
           ]
         }
       },
@@ -15742,13 +15876,6 @@
         }
       },
       {
-        "Alpine IQ": {
-          "https://aiq.com": [
-            "lab.alpineiq.com"
-          ]
-        }
-      },
-      {
         "Amazon": {
           "https://www.amazon.com/": [
             "4e7d2b3cdfc7.edge.sdk.awswaf.com",
@@ -16089,9 +16216,26 @@
         }
       },
       {
+        "Clay": {
+          "https://clay.com/": [
+            "claydar.com"
+          ]
+        }
+      },
+      {
         "ClearLink": {
           "https://www.clearlink.com/": [
             "clearlink.com"
+          ]
+        }
+      },
+      {
+        "Clickadu": {
+          "https://clickadu.com/": [
+            "campfirecroutondecorator.com",
+            "deductgreedyheadroom.com",
+            "demandingoverdriveunthread.com",
+            "earmuffpostnasalrisotto.com"
           ]
         }
       },
@@ -16547,6 +16691,13 @@
         }
       },
       {
+        "Janusaent": {
+          "https://janusaent.com/": [
+            "janusaent.com"
+          ]
+        }
+      },
+      {
         "Jennydanny.com": {
           "https://jennydanny.com": [
             "news.jennydanny.com"
@@ -16838,6 +16989,13 @@
         }
       },
       {
+        "OpenWeb": {
+          "https://openweb.com/": [
+            "monti-config.bqstreamer.com"
+          ]
+        }
+      },
+      {
         "opin.media": {
           "https://opin.media": [
             "jssdk.opin.media"
@@ -16853,8 +17011,7 @@
       },
       {
         "Overwolf": {
-          "https://overwolf.com": [
-            "nsure.tebex.io",
+          "https://overwolf.com/": [
             "s.nitropay.com"
           ]
         }
@@ -16989,13 +17146,6 @@
         "rxayc.com": {
           "https://rxayc.com": [
             "rxayc.com"
-          ]
-        }
-      },
-      {
-        "SALESmanago": {
-          "https://salesmanago.com": [
-            "salesmanago.com"
           ]
         }
       },
@@ -18053,8 +18203,8 @@
       },
       {
         "Opper": {
-          "https://opper.io": [
-            "qiota.com"
+          "https://opper.io/": [
+            "static.qiota.com"
           ]
         }
       },
